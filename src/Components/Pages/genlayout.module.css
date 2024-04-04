@@ -1,0 +1,196 @@
+.flexcontainer {
+  height: 81.5vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: row;
+}
+
+.flexitemleft {
+  width: 6%;
+  height: 100%;
+  position: sticky;
+  height: 81vh;
+}
+
+.flexitemright {
+  width: 94%;
+  display: flex;
+  flex-direction: row;
+  height: 70vh;
+}
+
+.photo {
+  height: 100%;
+  width: auto;
+  margin-left: 0.75em;
+}
+
+.photocontainer{
+  height:100%;
+  position: relative; /* Add relative positioning */
+  display: inline-block;
+}
+.photo:hover {
+  cursor: pointer;
+}
+
+.overlay{
+  position: absolute; /* Position the overlay relative to the container */
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 0.75rem); /* Set the overlay width to match the container */
+  height: 30%; /* Set the overlay height to match the container */
+  opacity: 0%; /* Adjust overlay opacity as needed */
+  /* Set overlay background color */
+
+  margin-left: 0.75rem;
+}
+
+.overlay:hover{
+  opacity:100%;
+}
+.photoverlay{
+  position: absolute; /* Position the overlay relative to the container */
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Set the overlay width to match the container */
+  height: 100%; /* Set the overlay height to match the container */
+  opacity: 0.6; /* Adjust overlay opacity as needed */
+  background-color: gray; /* Set overlay background color */
+
+ 
+}
+
+
+.overlaytext{
+  position: absolute; /* Position the overlay text relative to the photoverlay */
+  top: 5%;
+  left: 2%;
+
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Mukta", sans-serif;
+  z-index: 1; /* Ensure text is displayed over the background */
+}
+
+
+.flexcontainer::-webkit-scrollbar {
+  width: 20px;
+  height: 5px;
+}
+
+/* Track */
+.flexcontainer::-webkit-scrollbar-track {
+  height: 5px;
+  border-radius: 10px;
+}
+
+/* Handle */
+.flexcontainer::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.flexcontainer::-webkit-scrollbar-thumb:hover {
+}
+
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow-x:hidden; /* Enable scroll if needed */
+  overflow-y: auto;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+}
+.modalImg {
+
+ 
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  animation: 2s zoom;
+  position: absolute;
+}
+
+
+.prev {
+  z-index: 999;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left:0;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  font-weight: bold;
+  font-size: 50px;
+  height: 20px;
+  width: 20px;
+  color:white;
+}
+
+.next {
+  z-index: 999;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  font-weight: bold;
+  font-size: 50px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  height: 20px;
+  width: 20px;
+ color: white;
+}
+
+.close {
+  z-index: 2;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  height: 20px;
+  width: 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  opacity: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.prev:hover,
+.next:hover {
+  color: #bbb;
+  opacity: 100%;
+}
+
+.hidden {
+  display: none;
+}

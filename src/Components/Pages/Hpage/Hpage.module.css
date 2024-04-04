@@ -1,0 +1,8 @@
+
+
+.Hpage{
+    overflow-y: hidden;
+}
+.Hpage::-webkit-scrollbar {
+    display: none !important;
+   }
