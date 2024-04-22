@@ -16,7 +16,7 @@ function App() {
 <>
 
 
-
+<HashRouter>
 <Routes>
    <Route path="/" element={<Homepage />} />
    <Route path="/Ezbuilders" element={<Ezbuilders/>} />
@@ -27,7 +27,7 @@ function App() {
    <Route path ="/pvilion" element = {<Pvilion/>} />
    <Route path="/contact" element={''} />
 </Routes>
-
+</HashRouter>
 </>
   );
 }
