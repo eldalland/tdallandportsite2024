@@ -143,9 +143,9 @@ const Ezbuilders = () => {
   }, [scrollUrl, imageList, imageRefs]);
 
   const TextList = [
-    "BEACH TENT - 1971",
-    "CORNELL TENT",
-    "CORNELL",
+    "a",
+    "b",
+    "c",
     "d",
     "e",
     "f",
@@ -153,6 +153,9 @@ const Ezbuilders = () => {
     "h",
     "i",
     "j",
+    "k",
+    "l",
+    "m"
   ];
 
   useEffect(() => {
@@ -174,7 +177,7 @@ const Ezbuilders = () => {
   }, []);
   return (
     <>
-      <NavbarEZ />
+      <NavbarEZ text = "EZ BUILDERS"/>
       <div className={isFullScreen ? genstyles.modal : ""}>
         <img
           className={isFullScreen ? genstyles.modalImg : genstyles.hidden}
@@ -189,6 +192,8 @@ const Ezbuilders = () => {
         <div className={isFullScreen ? genstyles.close : genstyles.hidden}>
           <IoIosCloseCircleOutline onClick={toggle} />
         </div>
+        <div className={genstyles.ratio}
+        > {currentIndex + 1}/{imageList.length}</div>
       </div>
       <div ref={scrollContainer} className={genstyles.flexcontainer}>
         <div className={genstyles.flexitemleft}> </div>
