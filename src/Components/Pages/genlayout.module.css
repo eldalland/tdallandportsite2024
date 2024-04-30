@@ -9,6 +9,22 @@
   -webkit-overflow-scrolling: touch;
   display: flex;
   flex-direction: row;
+  scroll-behavior: smooth;
+}
+
+.modalcontainer{
+  height:100vh;
+  width:100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  display:flex;
+  flex-direction:row;
+  position: absolute;
+  top:0;
+  left:0;
+  z-index:998;
 }
 
 .flexitemleft {
@@ -84,7 +100,9 @@
   width: 20px;
   height: 5px;
 }
-
+.modalcontainer::-webkit-scrollbar {
+ display: none;
+}
 /* Track */
 .flexcontainer::-webkit-scrollbar-track {
   height: 5px;
@@ -102,15 +120,16 @@
 }
 
 .modal {
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-
-  left: 0;
+  position: relative; /* Stay in place */
   top: 0;
+  left: 0;
+ 
+  flex: 0 0 100vw;
+
+
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow-x:hidden; /* Enable scroll if needed */
-  overflow-y: auto;
+
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
   display: flex;
@@ -119,19 +138,19 @@
 }
 .modalImg {
 
- 
+
 
   height: 100%;
   z-index: 2;
   animation: 2s zoom;
-  position: absolute;
+
 }
 
 
 .prev {
   z-index: 999;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left:0;
   width: auto;
@@ -147,7 +166,7 @@
 .next {
   z-index: 999;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 50%;
   right: 1%;
   width: auto;
@@ -165,8 +184,8 @@
 }
 
 .close {
-  z-index: 2;
-  position: absolute;
+  z-index: 999;
+  position: fixed;
   top: 15px;
   right: 35px;
   color: white;
@@ -194,13 +213,15 @@
 .hidden {
   display: none;
 }
-
+.visible{
+  display:block;
+}
 .ratio{
   z-index: 999;
   color: white;
   font-size: 1.5rem;
 
-  position: absolute;
+  position: fixed;
 bottom: 0%;
   left: 97.5%;
 transform: translate(-50%, -50%);
