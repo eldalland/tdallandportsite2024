@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/tdallandportsite2024/static/css/main.fbf4ff24.css",
-    "main.js": "/tdallandportsite2024/static/js/main.e2d9d73a.js",
+    "main.css": "/tdallandportsite2024/static/css/main.b7beac32.css",
+    "main.js": "/tdallandportsite2024/static/js/main.b05a944c.js",
     "static/js/453.3cd58808.chunk.js": "/tdallandportsite2024/static/js/453.3cd58808.chunk.js",
     "static/media/logo.svg": "/tdallandportsite2024/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/tdallandportsite2024/index.html",
-    "main.fbf4ff24.css.map": "/tdallandportsite2024/static/css/main.fbf4ff24.css.map",
-    "main.e2d9d73a.js.map": "/tdallandportsite2024/static/js/main.e2d9d73a.js.map",
+    "main.b7beac32.css.map": "/tdallandportsite2024/static/css/main.b7beac32.css.map",
+    "main.b05a944c.js.map": "/tdallandportsite2024/static/js/main.b05a944c.js.map",
     "453.3cd58808.chunk.js.map": "/tdallandportsite2024/static/js/453.3cd58808.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fbf4ff24.css",
-    "static/js/main.e2d9d73a.js"
+    "static/css/main.b7beac32.css",
+    "static/js/main.b05a944c.js"
   ]
 }
