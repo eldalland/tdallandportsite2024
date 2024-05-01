@@ -49,6 +49,7 @@
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5em;
+  cursor: pointer;
   
 }
 
@@ -59,7 +60,7 @@
   flex-direction: column;
   justify-content: center;
   padding-right: 0.5em;
-
+ 
 }
 
 .names {
@@ -69,7 +70,7 @@
   width: 50%;
   font-family: "Mukta", sans-serif;
   text-transform:uppercase;
- 
+  
 }
 
 @media screen and (max-width:1024px){
@@ -79,12 +80,13 @@
 }
 
 .company {
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   color: black;
    font-family: "Mukta", sans-serif;
   font-weight: bold;
-
+  letter-spacing: .05rem;
   height:50%;
+
 }
 
 @media screen and (max-width:1024px){
