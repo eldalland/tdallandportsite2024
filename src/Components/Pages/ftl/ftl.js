@@ -411,12 +411,7 @@ const FTL = () => {
   return (
     <>
       <NavbarEZ text="FUTURE TENTS LIMITED" />
-      <div className={isFullScreen ? genstyles.prev : genstyles.hidden}>
-        <IoIosArrowBack onClick={() => backSlide()} />
-      </div>
-      <div className={isFullScreen ? genstyles.next : genstyles.hidden}>
-        <IoIosArrowForward onClick={() => slide()} />
-      </div>
+      
       <div className={isFullScreen ? genstyles.close : genstyles.hidden}>
         <IoIosCloseCircleOutline onClick={close} />
       </div>
@@ -429,16 +424,13 @@ const FTL = () => {
         className={isFullScreen ? genstyles.modalcontainer : genstyles.hidden}
       >
         {pphotos.map((url, index) => (
-          <div
-            index={index}
-            className={isFullScreen ? genstyles.modal : genstyles.hidden}
-          >
+          
             <img
               ref={imageRefs[index]}
               className={isFullScreen ? genstyles.modalImg : genstyles.hidden}
               src={url}
             ></img>
-          </div>
+         
         ))}
       </div>
       <div ref={scrollContainer} className={genstyles.flexcontainer}>
