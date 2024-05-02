@@ -64,12 +64,16 @@
   bottom: 0;
   left: 0;
   width: calc(100% - 0.75rem); /* Set the overlay width to match the container */
-  height: 30%; /* Set the overlay height to match the container */
+  height: 10%; /* Set the overlay height to match the container */
   opacity: 0%; /* Adjust overlay opacity as needed */
   /* Set overlay background color */
-
+  overflow: hidden;
   margin-left: 0.75rem;
+  display: flex;
+  align-items: center;
 }
+
+
 
 .overlay:hover{
   opacity:100%;
@@ -90,14 +94,22 @@
 .overlaytext{
   position: absolute; /* Position the overlay text relative to the photoverlay */
   top: 5%;
-  left: 2%;
+  right: 0%;
 
   color: white;
+  width:100%;
   font-size: 1.5rem;
   font-family: "Mukta", sans-serif;
-  z-index: 1; /* Ensure text is displayed over the background */
-}
+  display: flex;
+  justify-content: flex-end;
 
+  z-index: 1; /* Ensure text is displayed over the background */
+  animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(25%); }
+  100% { transform: translateX(-100%); }
+}
 
 .flexcontainer::-webkit-scrollbar {
   width: 20px;
