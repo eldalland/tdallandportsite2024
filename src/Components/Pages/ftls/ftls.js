@@ -5,7 +5,7 @@ import Navbar from "../../Navbar/Navbar";
 import ProjectFooter from "../../ProjectFooter/ProjectFooter";
 import { useState, useEffect, useRef } from "react";
 import { storage } from "../../Firebase/Firebase";
-
+import CloseIcon from "../ftl/CloseIcon.png"
 import { useLocation } from "react-router-dom";
 import { createRef } from "react";
 import {
@@ -117,7 +117,7 @@ const FTLS = () => {
   const handleWheel = (e) => {
     if (scrollContainer.current) {
       // Scroll horizontally (deltaY gives the amount of pixels to scroll)
-      scrollContainer.current.scrollLeft += e.deltaY;
+      scrollContainer.current.scrollLeft += e.deltaY * 10;
     }
   };
 
@@ -170,7 +170,7 @@ const FTLS = () => {
     },
     { photolink: "ftlsProjects/ftlsThumbnails/JOCOTAS3 LR.JPG", text: "JOCOTAS Charging Sail - US Army - 2010" },
    
-    { photolink: "ftlsProjects/ftlsThumbnails/rendering3.jpg", text: "Millenium Park Sound Mix Booth -2008" },
+    { photolink: "ftlsProjects/ftlsThumbnails/rendering3.jpg", text: "Millenium Park Sound Mix Booth - 2008" },
     {
       photolink: "ftlsProjects/ftlsThumbnails/PowerMod 20x20 Single-Pole Power Plant Array.jpeg",
       text: "Portable Power Plant",
@@ -255,26 +255,54 @@ const FTLS = () => {
     };
   }, []);
 
-  const calculateIndex = () => {
-    if (scrollModal.current) {
-      const index = Math.round(
-        scrollModal.current.scrollLeft / scrollModal.current.offsetWidth
-      );
-      setSlideIndex(index);
-    }
-  };
-
-  // Add scroll event listener to the scrollModal
   useEffect(() => {
     if (scrollModal.current) {
-      scrollModal.current.addEventListener("scroll", calculateIndex);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = Number(entry.target.getAttribute("data-index"));
+              setSlideIndex(index);
+            }
+          });
+        },
+        {
+          root: scrollModal.current,
+          threshold: 0.1,
+        }
+      );
+
+      const children = scrollModal.current.children;
+      for (let i = 0; i < children.length; i++) {
+        children[i].setAttribute("data-index", i);
+        observer.observe(children[i]);
+      }
+
+      return () => observer.disconnect();
     }
-    return () => {
+  }, [pphotos]);
+
+  useEffect(() => {
+    const updateSlideIndex = () => {
       if (scrollModal.current) {
-        scrollModal.current.removeEventListener("scroll", calculateIndex);
+        const containerWidth = scrollModal.current.offsetWidth;
+        let totalWidth = 0;
+        const images = scrollModal.current.getElementsByTagName("img");
+        for (let i = 0; i < images.length; i++) {
+          totalWidth += images[i].offsetWidth;
+          if (totalWidth >= containerWidth) {
+            setSlideIndex(i);
+            break;
+          }
+        }
       }
     };
+
+    window.addEventListener("resize", updateSlideIndex);
+
+    return () => window.removeEventListener("resize", updateSlideIndex);
   }, []);
+
   useEffect(() => {
     if (scrollUrl && photos.length > 0) {
       const index = photos.findIndex((url) => url === scrollUrl);
@@ -294,15 +322,9 @@ const FTLS = () => {
   }, [scrollUrl, photos]);
   return (
     <>
-      <NavbarEZ text="FTL DESIGN ENGINEERING STUDIO" />
-      <div className={isFullScreen ? genstyles.prev : genstyles.hidden}>
-        <IoIosArrowBack onClick={() => backSlide()} />
-      </div>
-      <div className={isFullScreen ? genstyles.next : genstyles.hidden}>
-        <IoIosArrowForward onClick={() => slide()} />
-      </div>
+      <NavbarEZ text="FTL SOLAR" />
       <div className={isFullScreen ? genstyles.close : genstyles.hidden}>
-        <IoIosCloseCircleOutline onClick={close} />
+        <img src={CloseIcon} style={{width:"40px",}} onClick={close} />
       </div>
       <div className={genstyles.ratio}>
         {" "}
@@ -313,16 +335,13 @@ const FTLS = () => {
         className={isFullScreen ? genstyles.modalcontainer : genstyles.hidden}
       >
         {pphotos.map((url, index) => (
-          <div
-            index={index}
-            className={isFullScreen ? genstyles.modal : genstyles.hidden}
-          >
+          
             <img
               ref={imageRefs[index]}
               className={isFullScreen ? genstyles.modalImg : genstyles.hidden}
               src={url}
             ></img>
-          </div>
+         
         ))}
       </div>
       <div ref={scrollContainer} className={genstyles.flexcontainer}>
