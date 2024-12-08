@@ -11,26 +11,26 @@ const Homepage = () => {
 
   const thumbnailList = [
     {
-      photolink: "ezbuildersThumbnails/Beach Tent.jpg",
-      text: "Beach Tent",
+      photolink: "ezbuildersThumbnails/BeachTent.webp",
+      text: "Beach Tent - Jones Beach",
     },
-    { photolink: "ezbuildersThumbnails/Picture8.jpg", text: "Deep Purple Concert Tent" },
-    { photolink: "ezbuildersThumbnails/Hump Tent.jpg", text: "Hump Tent" },
-    { photolink: "ezbuildersThumbnails/Hypar.jpg", text: "Hypar" },
-    { photolink: "ezbuildersThumbnails/Inflatable.jpg", text: "Inflatable" },
+    { photolink: "ezbuildersThumbnails/DeepPurple.webp", text: "Deep Purple Concert Bandshell - Schoellkopf Field" },
+    { photolink: "ezbuildersThumbnails/HumpTent.webp", text: "Hump Tent - Arts Quad" },
+    { photolink: "ezbuildersThumbnails/HyparIthaca.webp", text: "Hypar - Ithaca" },
+    { photolink: "ezbuildersThumbnails/Inflatable.webp", text: "Inflatable - Arts Quad" },
     {
-      photolink: "ezbuildersThumbnails/Spheres - Wantagh.JPG",
+      photolink: "ezbuildersThumbnails/Sphere.webp",
       text: "Inflated Spheres - Wantagh",
     },
     {
-      photolink: "ezbuildersThumbnails/Radial Wave Tent.jpg",
-      text: "Radial Wave Tent",
+      photolink: "ezbuildersThumbnails/Radial.webp",
+      text: "Radial Wave Tent - Spifing Arts Festival - Arts Quad",
     },
-    { photolink: "ezbuildersThumbnails/TD Thesis Model.jpg", text: "TD Thesis Model" },
+    { photolink: "ezbuildersThumbnails/Thesis.webp", text: "Cutting Pattern Program and Physical Models" },
    
-    { photolink: "ezbuildersThumbnails/UMass.jpg", text: "UMass" },
+    { photolink: "ezbuildersThumbnails/Umass.webp", text: "UMass" },
   
-    
+    { photolink: "ezbuildersThumbnails/2.0 Hypar - Frei Otto.webp", text: "" },
 
     
   ];
@@ -667,9 +667,9 @@ const Homepage = () => {
             <div className={styles.project}>
               <div className={styles.titlebox}>
                 <div className={styles.names}>
-                  1982 - Nic Goldsmith, Denis Hector, Ross Dalland, Todd Dalland
+                  1982 - Nic Goldsmith, Todd Dalland
                 </div>
-                <div className={styles.company}>FTL DESIGN ENGINEERING</div>
+                <div className={styles.company}>FTL DESIGN ENGINEERING STUDIO</div>
               </div>
               <div className={styles.photobox}>
                 {imageList3.map((url, index) => {

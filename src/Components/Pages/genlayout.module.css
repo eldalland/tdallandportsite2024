@@ -30,10 +30,12 @@
   background-color: rgba(255, 255, 255, 0.9); /* Black w/ opacity */
 }
 
-.modalcontainer img:not(:last-child) {
-  margin-right:0.2rem;
+.modalcontainer img:last-child {
+  margin-left:0.2rem;
 }
-
+.moalcontainer img:first-child {
+  margin-left:0;
+}
 .modalcontainer img:only-child{
   margin: auto;
   display: block;
@@ -171,6 +173,7 @@ width: min-content;
   z-index: 2;
   animation: 2s zoom;
   max-width:100vw;
+  margin-right: 0.4rem;
 }
 
 

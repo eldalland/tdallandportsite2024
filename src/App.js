@@ -5,7 +5,7 @@ import Hpage from './Components/Pages/Hpage/Hpage';
 import Ezbuilders from './Components/Pages/Ezbuilders/Ezbuilders'
 import { HashRouter, Link, Route, Routes } from "react-router-dom";
 import Homepage from './Components/Homepage/Homepage';
-import FTL from './Components/Pages/ftl/FTL';
+import FTL from './Components/Pages/ftl/ftl';
 import FTLD from './Components/Pages/ftld/ftld';
 import FTLH from './Components/Pages/ftlh/ftlh';
 import FTLS from './Components/Pages/ftls/ftls';
