@@ -10,6 +10,7 @@ import { useCustomNavigate } from "./useCustomNavigate";
 const Homepage = () => {
 
   const thumbnailList = [
+    
     {
       photolink: "ezbuildersThumbnails/BeachTent.webp",
       text: "Beach Tent - Jones Beach",
