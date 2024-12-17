@@ -106,22 +106,24 @@
 
 .overlaytext{
   position: absolute; /* Position the overlay text relative to the photoverlay */
-  top: 5%;
-  right: 0%;
   font-weight: bold;
   letter-spacing: .05rem;
   color: white;
   width:100%;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: "Mukta", sans-serif;
   display: flex;
-  justify-content: flex-end;
-
+  align-content: center;
+  justify-content: center;
   z-index: 1; /* Ensure text is displayed over the background */
   animation: marquee 10s linear infinite;
 }
+
+.overlaytext.large{
+
+}
 @keyframes marquee {
-  0% { transform: translateX(25%); }
+  0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
 

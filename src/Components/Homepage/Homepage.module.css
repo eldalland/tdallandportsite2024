@@ -62,19 +62,21 @@
   flex-direction: column;
   justify-content: center;
   padding-right: 0.5em;
- 
+  border: 1px solid yellow;
 }
 
 .names {
   font-size: 0.8rem;
   font-weight: bold;
   color: black;
-  width: 50%;
+  width: fit-content;
   font-family: "Mukta", sans-serif;
   text-transform:uppercase;
-  
+  border: 1px solid skyblue;
 }
-
+.names:hover{
+  cursor: pointer;
+}
 @media screen and (max-width:1024px){
 .names{
   font-size:0.6rem;
@@ -126,4 +128,12 @@
   background-color: white;
   bottom: 0;
   overflow: hidden;
+}
+.hidden{
+  display:none;
+}
+.collaborators{
+  display: flex;
+  justify-content: center;
+  font-weight: normal;
 }
