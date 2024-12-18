@@ -1,19 +1,24 @@
 import React from 'react';
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import Navbar from '../../Navbar/Navbar';
+import styles from './collaborators.module.css';
 
 const CollaboratorsEZ = () => {
+    const navigate = useNavigate();
     const nameArr = ['Todd Dalland', 'Nic Goldsmith', ' Denis Hector', ' Alexandr Neratoff'];
     return (
         <>
         <Navbar />
-        <div>
+        <div className={styles.container}>
+            <div className={styles.contentbox}>
             <div>Collaborators 1971 – 1977 </div>
             <h1>E-Z BUILDERS</h1>
             <div>Design, Fabrication, Installation</div>
-            <ul >
+            <ul className={styles.ul1}>
                 {nameArr.map((name, index) => <li key={index}>{name}</li>)}
                 </ul>
-            <div>Contact Site Administrator for missing names and corrections</div>
+            <div className={styles.footer}><span onClick={() => navigate("/contact")}>Contact Site Administrator</span> for missing names and corrections</div>
+            </div>
         </div>
         </>
     );

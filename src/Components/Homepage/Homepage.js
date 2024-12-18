@@ -609,10 +609,10 @@ const Homepage = () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
-  useEffect(() => {
+  /* useEffect(() => {
     const namesElements = document.querySelectorAll(`.${styles.names}`);
 
-    const handleMouseOver = (e) => {
+   const handleMouseOver = (e) => {
       const hiddenDiv = e.currentTarget.querySelector(`.${styles.hidden}`);
       if (hiddenDiv) {
         hiddenDiv.classList.remove(styles.hidden);
@@ -640,6 +640,7 @@ const Homepage = () => {
       });
     };
   }, []);
+  */
   // Inside your component
 
   return (
@@ -652,9 +653,8 @@ const Homepage = () => {
           <div className={styles.flexitemright}>
             <div className={styles.project}>
               <div className={styles.titlebox}>
-                <div className={styles.names} >
+                <div className={styles.names}onClick={() => navigate("/collaboratorsez")} >
                   1971 - Denis Hector, Nic Goldsmith, Todd Dalland
-                  <div className={styles.hidden} onClick={() => navigate("/collaboratorsez")}>Collaborators</div>
                 </div>
                 <div className={styles.company}>E-Z BUILDERS</div>
               </div>
@@ -675,10 +675,9 @@ const Homepage = () => {
 
             <div className={styles.project}>
               <div className={styles.titlebox}>
-                <div className={styles.names}>
+                <div className={styles.names}onClick={() => navigate("/collaboratorsftl")}>
                   1977 - Ross Dalland, Ray Gill, Nic Goldsmith, Denis Hector,
                   Todd Dalland
-                  <div className={styles.hidden}onClick={() => navigate("/collaboratorsftl")}>Collaborators</div>
                 </div>
                 <div className={styles.company}>FUTURE TENTS LTD</div>
               </div>
@@ -698,11 +697,10 @@ const Homepage = () => {
             </div>
             <div className={styles.project}>
               <div className={styles.titlebox}>
-                <div className={styles.names}>
+                <div className={styles.names}onClick={() => navigate("/collaboratorsftl")}>
                   1982 - Nic Goldsmith, Todd Dalland
-                  <div className={styles.hidden}>Collaborators</div>
                 </div>
-                <div className={styles.company}onClick={() => navigate("/collaboratorsftl")}>FTL DESIGN ENGINEERING STUDIO</div>
+                <div className={styles.company}>FTL DESIGN ENGINEERING STUDIO</div>
               </div>
               <div className={styles.photobox}>
                 {imageList3.map((url, index) => {
@@ -720,12 +718,11 @@ const Homepage = () => {
             </div>
             <div className={styles.project}>
               <div className={styles.titlebox}>
-                <div className={styles.names}>
+                <div className={styles.names}onClick={() => navigate("/collaboratorsftl")}>
                   1992 - Nic Goldsmith, Ted Happold, Ian Liddell, Eddie Pugh,
                   Todd Dalland
-                  <div className={styles.hidden}>Collaborators</div>
                 </div>
-                <div className={styles.company}onClick={() => navigate("/collaboratorsftl")}>FTL HAPPOLD</div>
+                <div className={styles.company}>FTL HAPPOLD</div>
               </div>
               <div className={styles.photobox}>
                 {imageList4.map((url, index) => {
@@ -743,9 +740,8 @@ const Homepage = () => {
             </div>
             <div className={styles.project}>
               <div className={styles.titlebox}>
-                <div className={styles.names}>
+                <div className={styles.names}onClick={() => navigate("/collaboratorssolar")}>
                   2006 - Robert Lerner, Tony Saxton, Todd Dalland
-                  <div className={styles.hidden}onClick={() => navigate("/collaboratorssolar")}>Collaborators</div>
                 </div>
                 <div className={styles.company}>FTL SOLAR</div>
               </div>
@@ -765,9 +761,8 @@ const Homepage = () => {
             </div>
             <div className={styles.project}>
               <div className={styles.titlebox}>
-                <div className={styles.names}>
+                <div className={styles.names}onClick={() => navigate("/collaboratorspvilion")}>
                   2011 - Robert Lerner, Colin Touhey, Todd Dalland
-                  <div className={styles.hidden}onClick={() => navigate("/collaboratorspvilion")}>Collaborators</div>
                 </div>
                 <div className={styles.company}>PVILION</div>
               </div>

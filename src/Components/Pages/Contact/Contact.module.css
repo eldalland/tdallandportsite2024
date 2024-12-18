@@ -1,0 +1,48 @@
+.container{
+    height:100vh;
+    width:100%;
+    display:flex;
+    justify-content: center;
+   
+    box-sizing: border-box;
+  
+}
+.formcontainer{
+    height:fit-content;
+    width:100%;
+    margin-left:6%;
+ 
+
+}
+.invisinput{
+    border: none;
+    background: none;
+    color: black;
+    caret-color: black; /* Color of the flashing cursor */
+    font-size: 2rem; /* Adjust font size as needed */
+    outline: none;
+    width: 100%;
+}
+.cursor {
+    position: absolute;
+    margin-top:0.15%;
+    width: 1px;
+    height: 2.2rem; /* Match the font size of the input */
+    background-color: black; /* Color of the flashing cursor */
+    animation: blink 1s step-start infinite;
+ 
+}
+.invis{
+    display: none;
+}
+/* Optional: Add a flashing cursor animation */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.invisibleInput:focus::after {
+    content: '|';
+    animation: blink 1s step-start infinite;
+    color: black; /* Color of the flashing cursor */
+}

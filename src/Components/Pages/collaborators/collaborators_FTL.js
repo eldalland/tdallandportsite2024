@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import Navbar from '../../Navbar/Navbar';
+import styles from './collaborators.module.css';
 
 const CollaboratorsFTL = () => {
+    const navigate = useNavigate();
     const nameArr = [
         'Luz Amaya',
         'Sam Armijos',
@@ -89,14 +92,16 @@ const CollaboratorsFTL = () => {
     return (
         <>
         <Navbar />
-        <div>
+        <div className={styles.container}>
+            <div className={styles.contentbox}>
             <div>Collaborators 1977 – 2006 </div>
-            <h1>FUTURE TENTS LTD, FTL DESIGN ENGINEERING STUDIO, FTL HAPPOLD</h1>
+            <div className={styles.company}>FUTURE TENTS LTD, FTL DESIGN ENGINEERING STUDIO, FTL HAPPOLD</div>
             <div>Design, Structural</div>
-            <ul >
+            <ul className={styles.ul3}>
                 {nameArr.map((name, index) => <li key={index}>{name}</li>)}
                 </ul>
-            <div>Contact Site Administrator for missing names and corrections</div>
+            <div className={styles.footer}><span onClick={() => navigate("/contact")}>Contact Site Administrator</span> for missing names and corrections</div>
+            </div>
         </div>
         </>
     );

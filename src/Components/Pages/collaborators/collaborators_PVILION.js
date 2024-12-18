@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import Navbar from '../../Navbar/Navbar';
+import styles from './collaborators.module.css';
 
 const CollaboratorsPVILION = () => {
+    const navigate = useNavigate();
     const nameArr = [
         'Henry Black',
         'Tim Burke',
@@ -36,14 +39,16 @@ const CollaboratorsPVILION = () => {
     return (
         <>
         <Navbar />
-        <div>
+        <div className={styles.container}>
+            <div className={styles.contentbox}>
             <div>Collaborators 2011 - 2024 </div>
             <h1>PVILION</h1>
             <div>Design, Structural, Electrical, Fabrication</div>
-            <ul >
+            <ul className={styles.ul2}>
                 {nameArr.map((name, index) => <li key={index}>{name}</li>)}
                 </ul>
-            <div>Contact Site Administrator for missing names and corrections</div>
+            <div className={styles.footer}><span onClick={() => navigate("/contact")}>Contact Site Administrator</span> for missing names and corrections</div>
+            </div>
         </div>
         </>
     );

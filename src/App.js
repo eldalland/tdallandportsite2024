@@ -14,6 +14,7 @@ import CollaboratorsEZ from './Components/Pages/collaborators/collaborators_EZ';
 import CollaboratorsFTL from './Components/Pages/collaborators/collaborators_FTL';
 import CollaboratorsSOLAR from './Components/Pages/collaborators/collaborators_SOLAR';
 import CollaboratorsPVILION from './Components/Pages/collaborators/collaborators_PVILION';
+import Contact from './Components/Pages/Contact/Contact';
 function App() {
   return (
 <>
@@ -32,6 +33,7 @@ function App() {
    <Route path ="/collaboratorsftl" element = {<CollaboratorsFTL/>} />
    <Route path ="/collaboratorssolar" element = {<CollaboratorsSOLAR/>} />
    <Route path ="/collaboratorspvilion" element = {<CollaboratorsPVILION/>} />
+   <Route path ="/contact" element = {<Contact/>} />
    <Route path="/contact" element={''} />
 </Routes>
 </HashRouter>
