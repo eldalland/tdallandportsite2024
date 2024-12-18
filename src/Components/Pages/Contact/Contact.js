@@ -45,6 +45,7 @@ const Contact = () => {
               onChange={handleChange}
               onKeyDown={handleKeyDown}
               className={styles.invisinput}
+              placeholder="Type your message here"
             ></input>
           </form>
         </div>

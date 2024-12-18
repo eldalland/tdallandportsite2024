@@ -16,7 +16,7 @@
 }
 .invisinput{
     border: none;
-    background: none;
+   
     color: black;
     caret-color: black; /* Color of the flashing cursor */
     font-size: 2rem; /* Adjust font size as needed */
