@@ -16,6 +16,12 @@ const Contact = () => {
     e.preventDefault();
     inputRef.current.focus();
   };
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      e.target.form.submit();
+    }
+  };
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();
@@ -26,14 +32,18 @@ const Contact = () => {
       <Navbar />
       <div className={styles.container}>
         <div className={styles.formcontainer}>
-          <form>
+          <form action = "https://formsubmit.co/tentshape@gmail.com" method="POST">
            
             <input
+            type="text"
+            name="Message"
+            required
               ref = {inputRef}
               value={inputValue}
               onFocus={handleFocus}
               onBlur={handleBlur}
               onChange={handleChange}
+              onKeyDown={handleKeyDown}
               className={styles.invisinput}
             ></input>
           </form>
