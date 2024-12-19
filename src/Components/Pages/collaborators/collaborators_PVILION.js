@@ -43,11 +43,11 @@ const CollaboratorsPVILION = () => {
             <div className={styles.contentbox}>
             <div>Collaborators 2011 - 2024 </div>
             <h1>PVILION</h1>
-            <div>Design, Structural, Electrical, Fabrication</div>
+            <div>Design, Structural, Electrical, Mechanical, Fabrication</div>
             <ul className={styles.ul2}>
                 {nameArr.map((name, index) => <li key={index}>{name}</li>)}
                 </ul>
-            <div className={styles.footer}><span onClick={() => navigate("/contact")}>Contact Site Administrator</span> for missing names and corrections</div>
+            <div className={styles.footer}><span onClick={() => navigate("/contact")}>Contact Site Administrator</span> for additional names and corrections</div>
             </div>
         </div>
         </>

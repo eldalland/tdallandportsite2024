@@ -26,14 +26,14 @@ const Homepage = () => {
          '2011 - Robert Lerner, Colin Touhey, Todd Dalland'
         ];
       if (window.matchMedia('(max-width: 600px)').matches) {
-        namesDivs.forEach((div, index) => {
+        /*namesDivs.forEach((div, index) => {
           div.textContent = shortenedContent[index]; // Update with your desired content
-        });
+        });*/
         ftld.textContent = 'FTL DES ENG STUDIO';
       } else {
-        namesDivs.forEach((div, index) => {
+        /*namesDivs.forEach((div, index) => {
           div.textContent = originalContent[index]; // Update with your desired content
-        });
+        });*/
       }
     };
 

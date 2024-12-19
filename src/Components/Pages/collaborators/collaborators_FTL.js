@@ -95,12 +95,12 @@ const CollaboratorsFTL = () => {
         <div className={styles.container}>
             <div className={styles.contentbox}>
             <div>Collaborators 1977 – 2006 </div>
-            <div className={styles.company}>FUTURE TENTS LTD, FTL DESIGN ENGINEERING STUDIO, FTL HAPPOLD</div>
+            <div className={styles.company}>FUTURE TENTS LTD FTL | DESIGN ENGINEERING STUDIO | FTL HAPPOLD</div>
             <div>Design, Structural</div>
             <ul className={styles.ul3}>
                 {nameArr.map((name, index) => <li key={index}>{name}</li>)}
                 </ul>
-            <div className={styles.footer}><span onClick={() => navigate("/contact")}>Contact Site Administrator</span> for missing names and corrections</div>
+            <div className={styles.footer}><span onClick={() => navigate("/contact")}>Contact Site Administrator</span> for additional names and corrections</div>
             </div>
         </div>
         </>

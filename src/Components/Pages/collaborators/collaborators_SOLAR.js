@@ -26,7 +26,7 @@ const CollaboratorsSOLAR = () => {
             <ul className={styles.ul1} >
                 {nameArr.map((name, index) => <li key={index}>{name}</li>)}
                 </ul>
-            <div className={styles.footer}><span onClick={() => navigate("/contact")}>Contact Site Administrator</span> for missing names and corrections</div>
+            <div className={styles.footer}><span onClick={() => navigate("/contact")}>Contact Site Administrator</span> for additional names and corrections</div>
             </div>
         </div>
         </>

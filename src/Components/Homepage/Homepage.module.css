@@ -151,17 +151,19 @@
   }
   .titlebox{
    
-   width:auto;
-    min-width:45vw;
-    white-space: normal;
+    width:fit-content;
+    min-width:50vw;
+ 
+    white-space: normal; /* Prevent text from wrapping */
   }
  
   .names{
-    font-size:0.8rem;
+    font-size:0.63rem;
     min-width:30vw;
   }
   .company{
     font-size:1.5rem;
     white-space: nowrap; /* Prevent text from wrapping */
   }
+ 
 }
