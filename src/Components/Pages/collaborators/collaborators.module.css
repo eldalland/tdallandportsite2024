@@ -1,6 +1,7 @@
 .container{
     height:100%;
-    width:100%;
+    width:auto;
+    max-width:94%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -50,32 +51,20 @@
   }
 
 body {
-    font-size: 1rem; /* Base font size */
+    font-size: 1.4rem; /* Base font size */
 }
 
 h1 {
-    font-size: 2rem; /* Heading font size */
+    font-size: 2.8rem; /* Heading font size */
 }
 
 p, li {
-    font-size: 1rem; /* Paragraph and list item font size */
+    font-size: 1.4rem; /* Paragraph and list item font size */
 }
 
-@media (min-width: 600px) {
-    body {
-        font-size: 1.2rem; /* Adjust base font size for larger screens */
-    }
 
-    h1 {
-        font-size: 2.4rem; /* Adjust heading font size for larger screens */
-    }
 
-    p, li {
-        font-size: 1.2rem; /* Adjust paragraph and list item font size for larger screens */
-    }
-}
-
-@media (min-width: 900px) {
+@media screen and (max-width: 900px) {
     body {
         font-size: 1.4rem; /* Further adjust base font size for even larger screens */
     }
@@ -86,5 +75,21 @@ p, li {
 
     p, li {
         font-size: 1.4rem; /* Further adjust paragraph and list item font size for even larger screens */
+    }
+}
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 1.2rem; /* Adjust base font size for larger screens */
+    }
+
+    h1 {
+        font-size: 1rem; /* Adjust heading font size for larger screens */
+    }
+
+    p, li {
+        font-size: .8rem; /* Adjust paragraph and list item font size for larger screens */
+    }
+    .footer{
+        font-size: 1rem;
     }
 }

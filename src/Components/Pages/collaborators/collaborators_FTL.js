@@ -95,7 +95,7 @@ const CollaboratorsFTL = () => {
         <div className={styles.container}>
             <div className={styles.contentbox}>
             <div>Collaborators 1977 – 2006 </div>
-            <div className={styles.company}>FUTURE TENTS LTD FTL | DESIGN ENGINEERING STUDIO | FTL HAPPOLD</div>
+            <h1 >FUTURE TENTS LTD | FTL DESIGN ENGINEERING STUDIO | FTL HAPPOLD</h1>
             <div>Design, Structural</div>
             <ul className={styles.ul3}>
                 {nameArr.map((name, index) => <li key={index}>{name}</li>)}
