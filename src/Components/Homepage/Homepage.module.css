@@ -53,7 +53,7 @@
   flex-direction: row;
   margin-bottom: 0.5em;
   cursor: pointer;
-  border: 3px green solid;
+
 }
 
 .titlebox {
@@ -63,7 +63,7 @@
   flex-direction: column;
   justify-content: center;
   padding-right: 0.5em;
-  border: 1px black solid;
+
 }
 
 .names {
@@ -105,16 +105,16 @@
   flex-direction: row;
   height: 100%;
   max-height: 100%;
-  border: 2px solid yellow;
+
 }
 
 .photo {
   height: 12.5vh;
-  width: auto;
+  width: 100%;
   overflow: clip;
   margin-right: 0.5em;
   object-fit: cover;
-  border: 2px solid palevioletred;
+
 }
 
 .link {
@@ -140,4 +140,24 @@
   justify-content: center;
   font-weight: normal;
   
+}
+
+@media screen and (max-width: 600px) {
+  .flexcontainer{
+    max-height:100vh;
+  }
+  .titlebox{
+   
+   
+    
+    white-space: normal;
+  }
+  .names{
+    font-size:0.8rem;
+ 
+  }
+  .company{
+    font-size:1.5rem;
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
 }

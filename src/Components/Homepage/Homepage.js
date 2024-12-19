@@ -8,7 +8,45 @@ import Navbar from "../Navbar/Navbar";
 import { useCustomNavigate } from "./useCustomNavigate";
 
 const Homepage = () => {
+  useEffect(() => {
+    const ftld = document.getElementById("ftld");
+    const handleResize = () => {
+      const namesDivs = document.querySelectorAll(`.${styles.names}`);
+      const originalContent = ['1971 - Denis Hector, Nic Goldsmith, Todd Dalland',
+        '1977 - Ross Dalland, Ray Gill, Nic Goldsmith, Denis Hector, Todd Dalland',
+        '1982 - Nic Goldsmith, Todd Dalland',
+        '1992 - Nic Goldsmith, Ted Happold, Ian Liddell, Eddie Pugh,Todd Dalland',
+        '2006 - Robert Lerner, Tony Saxton, Todd Dalland','2011 - Robert Lerner', 'Colin Touhey, Todd Dalland'];
+      const shortenedContent = ['1971 - Denis Hector, Nic Goldsmith, Todd Dalland',
+         '1977 - Ross Dalland, Ray Gill, Nic Goldsmith...',
+         '1982 - Nic Goldsmith, Todd Dalland',
+         '1992 - Nic Goldsmith, Ted Happold, Ian Liddell...',
+         '2006 - Robert Lerner, Tony Saxton, Todd Dalland...',
+         '2011 - Robert Lerner, Colin Touhey, Todd Dalland'
+        ];
+      if (window.matchMedia('(max-width: 600px)').matches) {
+        namesDivs.forEach((div, index) => {
+          div.textContent = shortenedContent[index]; // Update with your desired content
+        });
+        ftld.textContent = 'FTL DES ENG STUDIO';
+      } else {
+        namesDivs.forEach((div, index) => {
+          div.textContent = originalContent[index]; // Update with your desired content
+        });
+      }
+    };
 
+    // Initial check
+    handleResize();
+
+    // Add event listener for resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   const thumbnailList = [
     {
       photolink: "ezbuildersThumbnails/BeachTent.webp",
@@ -700,7 +738,7 @@ const Homepage = () => {
                 <div className={styles.names}onClick={() => navigate("/collaboratorsftl")}>
                   1982 - Nic Goldsmith, Todd Dalland
                 </div>
-                <div className={styles.company}>FTL DESIGN ENGINEERING STUDIO</div>
+                <div id='ftld'className={styles.company}>FTL DESIGN ENGINEERING STUDIO</div>
               </div>
               <div className={styles.photobox}>
                 {imageList3.map((url, index) => {
