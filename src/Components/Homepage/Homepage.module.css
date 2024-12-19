@@ -48,12 +48,12 @@
 .project {
   display: static;
   height: 12vh.5;
-  width: 100%;
+  width: fit-content;
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5em;
   cursor: pointer;
-  
+  border: 3px green solid;
 }
 
 .titlebox {
@@ -63,6 +63,7 @@
   flex-direction: column;
   justify-content: center;
   padding-right: 0.5em;
+  border: 1px black solid;
 }
 
 .names {
