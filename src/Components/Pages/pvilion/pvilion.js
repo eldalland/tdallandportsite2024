@@ -341,10 +341,7 @@ const Pvilion = () => {
       <div className={isFullScreen ? genstyles.close : genstyles.hidden}>
         <img src={CloseIcon} style={{width:"40px",}} onClick={close} />
       </div>
-      <div className={genstyles.ratio}>
-        {" "}
-        {slideIndex + 1}/{numPhotos}
-      </div>
+
       <div
         ref={scrollModal}
         className={isFullScreen ? genstyles.modalcontainer : genstyles.hidden}
