@@ -16,7 +16,8 @@ const Homepage = () => {
         '1977 - Ross Dalland, Ray Gill, Nic Goldsmith, Denis Hector, Todd Dalland',
         '1982 - Nic Goldsmith, Todd Dalland',
         '1992 - Nic Goldsmith, Ted Happold, Ian Liddell, Eddie Pugh,Todd Dalland',
-        '2006 - Robert Lerner, Tony Saxton, Todd Dalland','2011 - Robert Lerner', 'Colin Touhey, Todd Dalland'];
+        '2006 - Robert Lerner, Tony Saxton, Todd Dalland',
+        '2011 - Robert Lerner, Colin Touhey, Todd Dalland'];
       const shortenedContent = ['1971 - Denis Hector, Nic Goldsmith, Todd Dalland',
          '1977 - Ross Dalland, Ray Gill, Nic Goldsmith...',
          '1982 - Nic Goldsmith, Todd Dalland',
