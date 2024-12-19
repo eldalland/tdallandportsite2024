@@ -4,7 +4,7 @@
   display: block;
   
   width: 100%;
-  height:100%;
+  height:82vh;
  
   overflow-x: scroll;
   overflow-y: hidden;
@@ -48,7 +48,7 @@
 .project {
   display: static;
   height: 12vh.5;
-  width: fit-content;
+  width: 100%;
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5em;
@@ -144,7 +144,8 @@
 
 @media screen and (max-width: 600px) {
   .flexcontainer{
-    max-height:100vh;
+    height: 86vh;
+    max-height:86vh;
   }
   .titlebox{
    

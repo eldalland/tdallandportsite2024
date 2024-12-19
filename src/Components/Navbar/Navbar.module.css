@@ -14,7 +14,12 @@
     font-weight:800;
     }
 
-
+@media screen and (max-width:600px){
+    .nav{
+        height: 14vh;
+    }
+    
+}
 
 
 
@@ -31,6 +36,12 @@ display: none;
     letter-spacing: .05rem;
     
 }   
+@media screen and (max-width:600px){
+    .title{
+        font-size: 2rem;
+    }
+    
+}
 
 .title:hover{
     opacity: 0.5;
