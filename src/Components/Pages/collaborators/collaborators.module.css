@@ -83,11 +83,11 @@ p, li {
     }
 
     h1 {
-        font-size: 1rem; /* Adjust heading font size for larger screens */
+        font-size: 1.1rem; /* Adjust heading font size for larger screens */
     }
 
     p, li {
-        font-size: .8rem; /* Adjust paragraph and list item font size for larger screens */
+        font-size: .95rem; /* Adjust paragraph and list item font size for larger screens */
     }
     .footer{
         font-size: 1rem;

@@ -1,5 +1,6 @@
 .flexcontainer {
-  height: 81.5vh;
+  height: 82vh;
+  max-height: 82vh;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -14,6 +15,7 @@
 
 .modalcontainer{
   height:100vh;
+  max-height:100vh;
   width:100%;
   overflow-x: scroll;
   overflow-y: hidden;
