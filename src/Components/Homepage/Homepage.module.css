@@ -7,7 +7,7 @@
   height:82vh;
  
   overflow-x: scroll;
-  overflow-y: hidden;
+  
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
 
@@ -152,14 +152,17 @@
   .titlebox{
    
     width:fit-content;
-    min-width:50vw;
- 
-    white-space: normal; /* Prevent text from wrapping */
+    
+    display: inline-block;
+    white-space: nowrap; /* Prevent text from wrapping */
   }
  
   .names{
     font-size:0.63rem;
     min-width:30vw;
+   
+    display: inline-block;
+    white-space: nowrap;
   }
   .company{
     font-size:1.5rem;
