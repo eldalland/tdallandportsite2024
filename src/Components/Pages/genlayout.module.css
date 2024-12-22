@@ -13,6 +13,12 @@
   scroll-behavior: smooth;
   
 }
+@media screen and (max-width:600px){
+  .flexcontainer{
+      height: 84vh;
+  }
+  
+}
 
 .modalcontainer{
   height:100vh;
@@ -125,7 +131,7 @@
   align-content: center;
   justify-content: center;
   z-index: 1; /* Ensure text is displayed over the background */
-  animation: marquee 10s linear infinite;
+  animation: marquee 20s linear infinite;
 }
 
 .overlaytext.large{

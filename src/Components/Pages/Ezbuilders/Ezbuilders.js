@@ -171,8 +171,10 @@ const Ezbuilders = () => {
     { photolink: "ezbuildersThumbnails/Thesis.webp", text: "Cutting Pattern Program and Physical Models" },
    
     { photolink: "ezbuildersThumbnails/Umass.webp", text: "UMass" },
-    { photolink: "ezbuildersThumbnails/2.0 Hypar - Frei Otto.webp", text: "Influences" },
-  
+    {photolink: "ezbuildersThumbnails/CORNELL ALUMNI MAGAZINE 1.webp", text: "Cornell Alumni Magazine" },
+    {photolink: "ezbuildersThumbnails/CENTURY TENTS - Arts Quad.webp", text: "CENTURY TENTS - Arts Quad" },
+    { photolink: "ezbuildersThumbnails/1.0 INFLUENCERS 1955 - HYPAR - FREI OTTO.webp", text: "Influencers" },
+ 
     
 
     
@@ -188,6 +190,8 @@ const Ezbuilders = () => {
     "ezbuildersProjects/radialWave/",
     "ezbuildersProjects/tdThesis/",
     "ezbuildersProjects/uMass/",
+    "ezbuildersProjects/cornellAlumniMagazine/",
+    "ezbuildersProjects/centuryTents/",
     "ezbuildersProjects/influencers/",
     
   ];

@@ -15,7 +15,7 @@ const Homepage = () => {
       const originalContent = ['1971 - Denis Hector, Nic Goldsmith, Todd Dalland',
         '1977 - Ross Dalland, Ray Gill, Nic Goldsmith, Denis Hector, Todd Dalland',
         '1982 - Nic Goldsmith, Todd Dalland',
-        '1992 - Nic Goldsmith, Ted Happold, Ian Liddell, Eddie Pugh,Todd Dalland',
+        '1992 - Nic Goldsmith, Ted Happold, Ian Liddell, Eddie Pugh, Todd Dalland',
         '2006 - Robert Lerner, Tony Saxton, Todd Dalland',
         '2011 - Robert Lerner, Colin Touhey, Todd Dalland'];
       const shortenedContent = ['1971 - Denis Hector, \n Nic Goldsmith, Todd Dalland',
@@ -25,18 +25,20 @@ const Homepage = () => {
         '2006 - Robert Lerner, \nTony Saxton, Todd Dalland',
         '2011 - Robert Lerner, \nColin Touhey, Todd Dalland'
         ];
-      if (window.matchMedia('(max-width: 600px)').matches) {
-        namesDivs.forEach((div, index) => {
-          div.style.whiteSpace = 'pre-line';
-          div.textContent = shortenedContent[index]; // Update with your desired content
-        });
-        ftld.textContent = 'FTL DES ENG STUDIO';
-      } else {
-        namesDivs.forEach((div, index) => {
-          div.textContent = originalContent[index]; // Update with your desired content
-        });
-      }
-    };
+        if (window.matchMedia('(max-width: 600px)').matches) {
+          namesDivs.forEach((div, index) => {
+            div.classList.add(styles.preLineText);
+            div.textContent = shortenedContent[index];
+          });
+          if (ftld) ftld.textContent = 'FTL DES ENG STUDIO';
+        } else {
+          namesDivs.forEach((div, index) => {
+            div.classList.remove(styles.preLineText);
+            div.textContent = originalContent[index];
+          });
+          if (ftld) ftld.textContent = 'FTL DESIGN ENGINEERING STUDIO';
+        }
+      };
 
     // Initial check
     handleResize();
@@ -70,7 +72,7 @@ const Homepage = () => {
    
     { photolink: "ezbuildersThumbnails/Umass.webp", text: "UMass" },
   
-    { photolink: "ezbuildersThumbnails/2.0 Hypar - Frei Otto.webp", text: "" },
+    { photolink: "ezbuildersThumbnails/1.0 INFLUENCERS 1955 - HYPAR - FREI OTTO.webp", text: "" },
 
     
   ];
@@ -98,131 +100,153 @@ const Homepage = () => {
   }, []);
   const thumbnailList2 = [
     {
-      photolink: "ftlThumbnails/Picture26.png",
-      text: "7th on Sixth Fashion Village",
+      photolink: "ftlThumbnails/1.0 CARMELO POMODORO SHOWROOM - INTERIOR - NYC.webp",
+      text: "CARMELO POMODORO SHOWROOM - INTERIOR - NYC"
     },
-    { photolink: "ftlThumbnails/Slide79.JPG", text: "Anchor Bandshell" },
-    { photolink: "ftlThumbnails/circus.jpg", text: "Anchor Modules" },
-    { photolink: "ftlThumbnails/Picture_0129.jpg", text: "Arbee Canopy " },
-    { photolink: "ftlThumbnails/Slide85Clipped.JPG", text: " Armbruster Tent" },
-    {
-      photolink: "ftlThumbnails/Slide12Cropped.JPG",
-      text: " Bloomberg Headquarters",
+    { 
+      photolink: "ftlThumbnails/1.0 NORWALK IN-WATER BOAT SHOW.webp",
+      text: "NORWALK IN-WATER BOAT SHOW"
     },
-    {
-      photolink: "ftlThumbnails/Slide96.JPG",
-      text: "Bronx Zoo Aviary - 1996 ",
+    { 
+      photolink: "ftlThumbnails/1.0 NATIONAL SYMPHONY ORCHESTRA CONCERT SHELL 1 - WEST LAWN OF THE CAPITOL.webp",
+      text: "NATIONAL SYMPHONY ORCHESTRA CONCERT SHELL 1 - WEST LAWN OF THE CAPITOL"
     },
-    { photolink: "ftlThumbnails/Picture14.jpg", text: "Camp Wayne Pavilion" },
-    {
-      photolink: "ftlThumbnails/Picture23.jpg",
-      text: "Canada's Wonderland Amphitheater",
+    { 
+      photolink: "ftlThumbnails/1.0 PROCTOR & GAMBLE PAVILION - SAWYER POINT, CINCINNATI.webp",
+      text: "PROCTOR & GAMBLE PAVILION - SAWYER POINT, CINCINNATI"
     },
-    { photolink: "ftlThumbnails/1010-800x400.jpg", text: "Century Tents " },
-    {
-      photolink: "ftlThumbnails/Slide11.JPG",
-      text: " Charlottesville Amphitheater",
+    { 
+      photolink: "ftlThumbnails/1.0 REMSBERG ECLIPSE TENT - RENTAL TENT SYSTEM.webp",
+      text: "REMSBERG ECLIPSE TENT - RENTAL TENT SYSTEM"
     },
     {
-      photolink: "ftlThumbnails/FTL - EUREKA CAMPING TENT.jpg",
-      text: "Eureka Camping Tents",
-    },
-    { photolink: "ftlThumbnails/Capri_2.JPG", text: "Eureka Capri Tents " },
-    { photolink: "ftlThumbnails/Slide80.JPG", text: "Eureka Genesis Tents" },
-    {
-      photolink:
-        "ftlThumbnails/4150ad619dbf4c20d7897a858687caddI77lbbzx0ZJ3dDKn-0.jpeg",
-      text: "Ftl Brochure - 2005",
+      photolink: "ftlThumbnails/1.0 SOPER'S 100 TENT - RENTAL TENT SYSTEM.webp",
+      text: "SOPER'S 100 TENT - RENTAL TENT SYSTEM"
     },
     {
-      photolink: "ftlThumbnails/Omni_Guggenheim_1.jpg",
-      text: "Guggenheim Museum Mobiles",
+      photolink: "ftlThumbnails/1.0 ST. MICHAEL'S MONTESSORI SCHOOL PLAYGROUND NET.webp",
+      text: "ST. MICHAEL'S MONTESSORI SCHOOL PLAYGROUND NET"
+    },
+    { 
+      photolink: "ftlThumbnails/1.0 TIME FOR PEACE PVILION - DEPLOYABLE TRAVELLING MUSEUM CONCEPT.webp",
+      text: "TIME FOR PEACE PVILION - DEPLOYABLE TRAVELLING MUSEUM CONCEPT"
     },
     {
-      photolink: "ftlThumbnails/Harley Ext1.JPG",
-      text: "Harley Davidson Traveling Pavilion",
+      photolink: "ftlThumbnails/1.0 TME - DEPLOYABLE AIRBEAM TENT - US ARMY.webp",
+      text: "TME - DEPLOYABLE AIRBEAM TENT - US ARMY"
+    },
+    { 
+      photolink: "ftlThumbnails/1.0 WHITE HOUSE - GRANDSTAND TENTS AT THE ELLIPSE.webp",
+      text: "WHITE HOUSE - GRANDSTAND TENTS AT THE ELLIPSE"
     },
     {
-      photolink: "ftlThumbnails/Jacksonville4.jpg",
-      text: "Jacksonville Concert Pavilion",
-    },
-    { photolink: "ftlThumbnails/Slide31.JPG", text: "Kuwait Amphitheater" },
-    { photolink: "ftlThumbnails/Airtube1.JPG", text: "LANMAS Airbeam Tent" },
-    {
-      photolink: "ftlThumbnails/Slide93.JPG",
-      text: "MetPhil Travelling Stage",
-    },
-    { photolink: "ftlThumbnails/slide0088_image022.jpg", text: "MGPTS Tent" },
-    {
-      photolink: "ftlThumbnails/Montage-Mountain-Amplitheatre-2-900x550.jpg",
-      text: "Montage Mountain Amphitheater",
-    },
-    { photolink: "ftlThumbnails/111.jpg", text: "New York Aquarium" },
-    {
-      photolink: "ftlThumbnails/Picture16.jpg",
-      text: "Norwalk In-Water Boat Show Tents",
+      photolink: "ftlThumbnails/1.0 ARMBRUSTER TENSION TENT - RENTAL TENT SYSTEM.webp",
+      text: "ARMBRUSTER TENSION TENT - RENTAL TENT SYSTEM"
     },
     {
-      photolink: "ftlThumbnails/Picture20.jpg",
-      text: "NSO Bandshell at the Capitol - 1",
+      photolink: "ftlThumbnails/1.0 CAMP WAYNE GYMNASTICS PAVILION.webp",
+      text: "CAMP WAYNE GYMNASTICS PAVILION"
+    },
+    { 
+      photolink: "ftlThumbnails/1.0 CANADA'S WONDERLAND - DOLPHIN SHOW PAVILION.webp",
+      text: "CANADA'S WONDERLAND - DOLPHIN SHOW PAVILION"
+    },
+    { 
+      photolink: "ftlThumbnails/1.0 ANCHOR CENTURY TENT - RENTAL TENT SYSTEM.webp",
+      text: "ANCHOR CENTURY TENT - RENTAL TENT SYSTEM"
     },
     {
-      photolink:
-        "ftlThumbnails/National Symphony Orchestra Bandshell, The Capital, Washington , DC.JPG",
-      text: "NSO Bandshell at the Capitol - 2",
+      photolink: "ftlThumbnails/1.0 EUREKA! CAPRI TENT - RENTAL TENT SYSTEM.webp",
+      text: "EUREKA! CAPRI TENT - RENTAL TENT SYSTEM"
     },
     {
-      photolink: "ftlThumbnails/PHOENIX LIBRARY.jpg",
-      text: "Phoenix Library Facade Shading - 1992",
+      photolink: "ftlThumbnails/1.0 TENTNOLOGY - RENTAL TENT SYSTEM CONCEPT.webp",
+      text: "TENTNOLOGY - RENTAL TENT SYSTEM CONCEPT"
     },
     {
-      photolink: "ftlThumbnails/PierSix4.jpg",
-      text: "Pier 6 Concert Pavilion",
+      photolink: "ftlThumbnails/1.0 TENTNOLOGY - RENTAL CLEARSPAN  TENT CONCEPT.webp",
+      text: "TENTNOLOGY - RENTAL CLEARSPAN  TENT CONCEPT"
     },
     {
-      photolink: "ftlThumbnails/Procter_2.jpg",
-      text: "Proctor and Gamble Pavilion",
+      photolink: "ftlThumbnails/1.0 HOTEL INTERCONTINENTAL - INTERIOR SAILS.webp",
+      text: "HOTEL INTERCONTINENTAL - INTERIOR SAILS"
+    },
+    { 
+      photolink: "ftlThumbnails/1.0 HOLCIM HEADQUARTERS - SAN JOSE, COSTA RICA.webp",
+      text: "HOLCIM HEADQUARTERS - SAN JOSE, COSTA RICA"
+    },
+    { 
+      photolink: "ftlThumbnails/1.0 FINNISH CHANCERY - WASHINGTON DC.webp",
+      text: "FINNISH CHANCERY - WASHINGTON DC"
     },
     {
-      photolink: "ftlThumbnails/Ecclipse 120 Ft 1.JPG",
-      text: "Remsberg Eclipse Tents",
+      photolink: "ftlThumbnails/1.0 BIEDERMAN TENT EVENT - INTERIOR - NYC.webp",
+      text: "BIEDERMAN TENT EVENT - INTERIOR - NYC"
+    },
+    { 
+      photolink: "ftlThumbnails/1.0 BEIJING OLYMPICS MODULAR KIOSK TENT.webp",
+      text: "BEIJING OLYMPICS MODULAR KIOSK TENT"
     },
     {
-      photolink: "ftlThumbnails/PDR_0300.JPG",
-      text: "Schenley Plaza - Pittsburgh",
+      photolink: "ftlThumbnails/1.0 BARD COLLEGE ENTRANCE PVILION.webp",
+      text: "BARD COLLEGE ENTRANCE PVILION"
+    },
+    { 
+      photolink: "ftlThumbnails/1.0 BALTIMORE AQUARIUM ENTRANCE PAVILION.webp",
+      text: "BALTIMORE AQUARIUM ENTRANCE PAVILION"
     },
     {
-      photolink: "ftlThumbnails/Sopers 100 Ft 2.jpg",
-      text: "Soper's 100' Tent",
+      photolink: "ftlThumbnails/1.0 CHINA GRILL CEILING LIGHTING - INTERIOR - NYC.webp",
+      text: "CHINA GRILL CEILING LIGHTING - INTERIOR - NYC"
     },
     {
-      photolink: "ftlThumbnails/Picture12.jpg",
-      text: "St. Michael's Montessori Net",
-    },
-    { photolink: "ftlThumbnails/121.jpg", text: "Staten Island Esplanade" },
-    { photolink: "ftlThumbnails/Picture1.jpg", text: "Sunar Hauserman" },
-    {
-      photolink: "ftlThumbnails/Slide100.JPG",
-      text: "Syracuse Mall with David Architects",
+      photolink: "ftlThumbnails/1.0 PIER 6 CONCERT PAVILION 1 - BALTIMORE.webp",
+      text: "PIER 6 CONCERT PAVILION 1 - BALTIMORE"
     },
     {
-      photolink: "ftlThumbnails/pv solar fly for Temper Tent (FTL) 2.png",
-      text: "Temper Tent Solar Fly",
+      photolink: "ftlThumbnails/1.0 INFLUENCERS.webp",
+      text: "INFLUENCERS"
     },
     {
-      photolink: "ftlThumbnails/TimeforPeace_3.jpg",
-      text: "Time for Peace - Travelling Museum",
-    },
-    { photolink: "ftlThumbnails/tmeint.jpeg", text: "TME Airbeam Tent" },
-    {
-      photolink: "ftlThumbnails/100-0023_IMG.JPG",
-      text: "Voltige Circus Tent",
+      photolink: "ftlThumbnails/1.0 EUREKA! DENALI CAMPING TENT.webp",
+      text: "EUREKA! DENALI CAMPING TENT"
     },
     {
-      photolink: "ftlThumbnails/Picture18.jpg",
-      text: "White House Ellipse Tents",
+      photolink: "ftlThumbnails/1.0 ANCHOR BANDSHELL - RENTAL TENT.webp",
+      text: "ANCHOR BANDSHELL - RENTAL TENT"
     },
-    { photolink: "ftlThumbnails/Slide7.JPG", text: "WTC Winter Garden" },
+    {
+      photolink: "ftlThumbnails/1.0 ANCHOR MODULES - RENTAL TENT SYSTEM.webp",
+      text: "ANCHOR MODULES - RENTAL TENT SYSTEM"
+    },
+    {
+      photolink: "ftlThumbnails/1.0 EUREKA! GENESIS TENT - RENTAL TENT SYSTEM.webp",
+      text: "EUREKA! GENESIS TENT - RENTAL TENT SYSTEM"
+    },
+    {
+      photolink: "ftlThumbnails/1.0 CORNER PLATES - RENTAL TENT SYSTEM.webp",
+      text: "CORNER PLATES - RENTAL TENT SYSTEM"
+    },
+    {
+      photolink: "ftlThumbnails/1.0 FLORIDA NATIONAL PAVILION - JACKSONVILLE.webp",
+      text: "FLORIDA NATIONAL PAVILION - JACKSONVILLE"
+    },
+    {
+      photolink: "ftlThumbnails/1.0 NEW YORK AQUARIUM - DOLPHIN SEA LION PVILION.webp",
+      text: "NEW YORK AQUARIUM - DOLPHIN SEA LION PVILION"
+    },
+    { 
+      photolink: "ftlThumbnails/1.0 WORLD TRADE CENTER - WINTER GARDEN - INTERIOR.webp",
+      text: "WORLD TRADE CENTER - WINTER GARDEN - INTERIOR"
+    },
+    { 
+      photolink: "ftlThumbnails/1.0 WORLD FINANCIAL CENTER - FERRY TERMINAL.webp",
+      text: "WORLD FINANCIAL CENTER - FERRY TERMINAL"
+    },
+    {
+      photolink: "ftlThumbnails/1.0 SEVENTH ON 6TH FASHION WEEK - BRYANT PARK, NYC.webp",
+      text: "SEVENTH ON 6TH FASHION WEEK - BRYANT PARK, NYC"
+    }
   ];
 
   const [imageRefs2, setImageRefs2] = useState([]);
@@ -245,165 +269,152 @@ const Homepage = () => {
   }, []);
   const thumbnailList3 = [
     {
-      photolink: "ftldThumbnails/FTL - Airbeam Class Tent.jpg",
-      text: "Airbeam Rental Tent",
+      photolink: "ftldThumbnails/10-676711f174710.webp",
+      text: "SUNAR HAUSERMAN - SHOWROOM",
     },
     {
-      photolink: "ftldThumbnails/020000x.jpg",
-      text: "Anchor New Clearspan Tent",
+      photolink: "ftldThumbnails/10-67671206e637c.webp",
+      text: "MONTAGE MOUNTAIN CONCERT PAVILION",
     },
     {
-      photolink: "ftldThumbnails/AT & T_b.jpg",
-      text: "Atlanta Olympics - 1996",
-    },
-    { photolink: "ftldThumbnails/054.JPG", text: "Aztec Rental Tents" },
-    {
-      photolink: "ftldThumbnails/Baby Dome09.jpg",
-      text: "Baby Dome Millennium",
-    },
-    {
-      photolink: "ftldThumbnails/445.jpg",
-      text: "Baltimore Aquarium Entrance Pavilion",
-    },
-    {
-      photolink: "ftldThumbnails/151879-10280169.jpg",
-      text: "Bard College Entrance Pavilion",
-    },
-    {
-      photolink: "ftldThumbnails/Untitled-1.jpg",
-      text: "Beijing Olympic Kiosk",
+      photolink: "ftldThumbnails/10-6767122774bb3.webp",
+      text: "PHOENIX LIBRARY",
     },
 
-    { photolink: "ftldThumbnails/822.jpg", text: "BIiederman Event" },
     {
-      photolink: "ftldThumbnails/boston_internal_even.jpg",
-      text: "Boston Harbourlights Concert Pavilion",
+      photolink: "ftldThumbnails/1-676712729e2b3.webp",
+      text: "PIER 6 CONCERT PAVILION 2 - BALTIMORE",
     },
     {
-      photolink: "ftldThumbnails/Slide29.JPG",
-      text: "Cancun Mall",
+      photolink: "ftldThumbnails/10-676712986877c.webp",
+      text: "SCHENLEY PLAZA PVILION - PITTSBURGH",
     },
     {
-      photolink: "ftldThumbnails/Catskill Corners.jpg",
-      text: "Catskill Corners Pavilions",
-    },
-    { photolink: "ftldThumbnails/100-0023_IMG-1.JPG", text: "Cavaglia Circus" },
-    {
-      photolink: "ftldThumbnails/ChinaGrill_nice.jpg",
-      text: "China Grill Lighting",
+      photolink: "ftldThumbnails/10-676712b651f7a.webp",
+      text: "STATEN ISLAND ESPLANADE BUS SHELTER",
     },
     {
-      photolink: "ftldThumbnails/Picture10.jpg",
-      text: "Cirque de Soleil - Walt Disney World - 1998",
+      photolink: "ftldThumbnails/10-676712cfad6ae.webp",
+      text: "TEMPER TENT SOLAR FLY - US ARMY",
+    },
+
+    { photolink: "ftldThumbnails/10-676712ed4e93d.webp", text: "CAVALIA VOLTIGE CIRCUS TENT" },
+    {
+      photolink: "ftldThumbnails/10-67671307e0197.webp",
+      text: "ARBEE HEADQUARTERS CANOPY",
     },
     {
-      photolink: "ftldThumbnails/Darien-Lakes-4-900x550.jpg",
-      text: "Darien Lake Concert Pvilion",
+      photolink: "ftldThumbnails/10-676715e94afe6.webp",
+      text: "CHARLOTTESVILLE AMPHITHEATER",
     },
     {
-      photolink: "ftldThumbnails/Picture 9 Dep class.JPG",
-      text: "Deployable Classroom",
+      photolink: "ftldThumbnails/1-67671622a366a.webp",
+      text: "GUGENHEIM - MOBILES - DRAKAR NOIR EVENT",
     },
-    { photolink: "ftldThumbnails/RedCabina_Render.jpg", text: "Eco Cabina" },
+    { photolink: "ftldThumbnails/10-harley-davidson-travelling-exhibition-6767164be4789.webp", text: "HARLEY DAVIDSON TRAVELLING EXHIBITION" },
     {
-      photolink: "ftldThumbnails/FinnishChancery1.jpg",
-      text: "Finnish Chancery",
-    },
-    {
-      photolink: "ftldThumbnails/IMG_0150.jpg",
-      text: "Fold-up Camping Tent",
+      photolink: "ftldThumbnails/10-metropolitan-opera-ny-philarmonic-travelling-concert-pvilion-67671664483e4.webp",
+      text: "METROPOLITAN OPERA & NY PHILARMONIC TRAVELLING CONCERT PAVILION",
     },
     {
-      photolink: "ftldThumbnails/FTL_Brochure_page-0001.jpg",
-      text: "FTL Design Engineering Studio - Brochure",
+      photolink: "ftldThumbnails/10-lanmas-modular-airbeam-tent-us-army-6767167ec3768.webp",
+      text: "LANMAS - MODULAR AIRBEAM TENT - US ARMY",
     },
     {
-      photolink: "ftldThumbnails/costa rica 02.jpg",
-      text: "Holcim Headquarters - Costs Rica",
+      photolink: "ftldThumbnails/10-powershade-us-army-6767169bac01e.webp",
+      text: "POWERSHADE TENT - US ARMY",
     },
     {
-      photolink: "ftldThumbnails/Hotel_Inter1.jpg",
-      text: "Hotel Intercontinental Interior",
+      photolink: "ftldThumbnails/10-santiago-stadium-roof-concept-chile-676716e2320de.webp",
+      text: "SANTIAGO STADIUM ROOF CONCEPT - CHILE",
+    },
+    { photolink: "ftldThumbnails/10-zofri-mall-iquique-chile-676717020f89d.webp", text: "ZOFRI MALL - IQUIQUE, CHILE" },
+    {
+      photolink: "ftldThumbnails/10-worldwide-disaster-relief-tents-6767171c7c51a.webp",
+      text: "WORLDWIDE - DISASTER RELIEF TENTS",
     },
     {
-      photolink: "ftldThumbnails/Copy of Jeddah1.jpg",
-      text: "Jeddah Hotel",
+      photolink: "ftldThumbnails/10-ringling-bros-barnum-bailey-circus-tent-6767173a86157.webp",
+      text: "RINGLING BROS BARNUM & BAILEY - CIRCUS TENT CONCEPT",
     },
     {
-      photolink: "ftldThumbnails/MVC-003X (2).JPG",
-      text: "John Lee Bandshell",
+      photolink: "ftldThumbnails/10-really-fast-buildings-heitsch-gallery-munich-676717671ac3e.webp",
+      text: "REALLY FAST BUILDINGS - PRINTS - HEITSCH ART GALLERY - MUNICH",
     },
     {
-      photolink: "ftldThumbnails/White Charger 1.JPG",
-      text: "Konarka Fold-Up Charger",
+      photolink: "ftldThumbnails/10-konarka-fold-up-battery-charger-6767177da27a8.webp",
+      text: "KONARKA - FOLD-UP BATTERY CHARGER",
     },
     {
-      photolink: "ftldThumbnails/Lincos pic3.jpg",
-      text: "LINCOS",
+      photolink: "ftldThumbnails/10-bandshell-rental-tent-concepts-john-lee-676717dc0e931.webp",
+      text: "BANDSHELL RENTAL TENT CONCEPTS - JOHN LEE",
     },
     {
-      photolink: "ftldThumbnails/Picture10.jpg",
-      text: "NASA - Lunar Habitation",
+      photolink: "ftldThumbnails/10-jeddah-hotel-courtyard-roof-concept-676718719058e.webp",
+      text: "JEDDAH HOTEL COURTYARD ROOF CONCEPT",
     },
     {
-      photolink: "ftldThumbnails/NASArotated.jpg",
-      text: "NASA - Transhab Shuttle Airlock",
+      photolink: "ftldThumbnails/10-fold-up-camping-tent-prototype-hoberman-676718896c588.webp",
+      text: "FOLD-UP CAMPING TENT PROTOTYPE - HOBERMAN",
     },
     {
-      photolink: "ftldThumbnails/interior small.jpg",
-      text: "Pier Six Concert Pavilion - 1980",
+      photolink: "ftldThumbnails/10-deployable-classroom-nyc-school-construction-authority-676718c15e90a.webp",
+      text: "DEPLOYABLE CLASSROOM - NYC SCHOOL CONSTRUCTION AUTHORITY",
     },
     {
-      photolink: "ftldThumbnails/Early_Skyscraper.JPG",
-      text: "Portable Skyscraper 1",
+      photolink: "ftldThumbnails/10-darien-lake-concert-pavilion-buffalo-ny-676719001874a.webp",
+      text: "DARIEN LAKE CONCERT PAVILION - BUFFALO, NY",
     },
     {
-      photolink: "ftldThumbnails/Slide63.JPG",
-      text: "Portable Skyscraper 2",
+      photolink: "ftldThumbnails/10-catskill-corners-pvilion-ny-6767191d6f61e.webp",
+      text: "CATSKILL CORNERS PVILION - PHOENICIA, NY",
     },
     {
-      photolink: "ftldThumbnails/Slide64.JPG",
-      text: "PowerShade",
-    },
-    { photolink: "ftldThumbnails/ftl06.jpg", text: "Really Fast Buildings" },
-    {
-      photolink: "ftldThumbnails/unnamed (3).jpg",
-      text: "Ringling Bros. Barnum and Bailey Circus Tent",
+      photolink: "ftldThumbnails/10-millenium-park-pavilion-sound-mix-station-chicago-6767193ae1085.webp",
+      text: "MILLENIUM PARK PAVILION - SOUND MIX STATION - CHICAGO",
     },
     {
-      photolink: "ftldThumbnails/FTL3.JPEG",
-      text: "Santiago Stadium",
+      photolink: "ftldThumbnails/10-rental-tent-systems-concepts-aztec-6767195c9a2cd.webp",
+      text: "RENTAL TENT SYSTEMS CONCEPTS - AZTEC",
     },
     {
-      photolink: "ftldThumbnails/CCF06272013_0000.jpg",
-      text: "Skybox Solar Curtains",
+      photolink: "ftldThumbnails/10-powerfold-2000-fold-up-battery-charger-6767197b73a7f.webp",
+      text: "POWERFOLD 2000 - FOLD-UP BATTERY CHARGER",
     },
     {
-      photolink: "ftldThumbnails/arch9 copy.jpg",
-      text: "Tentnology Clearspan Tent - 2003",
+      photolink: "ftldThumbnails/10-powerfold-10-fold-up-battery-charger-676719944f15a.webp",
+      text: "POWERFOLD 10 - FOLD-UP BATTERY CHARGER",
     },
     {
-      photolink: "ftldThumbnails/60iso_solid.jpg",
-      text: "Tentnology Poleadion Tent -2003",
+      photolink: "ftldThumbnails/10-national-symphony-orchestra-concert-shell-2-west-lawn-of-the-capitol-676719afcbd37.webp",
+      text: "NATIONAL SYMPHONY ORCHESTRA CONCERT SHELL 2 - WEST LAWN OF THE CAPITOL",
+    },
+    { photolink: "ftldThumbnails/10-the-sea-bird-aviary-at-the-bronx-zoo-676719dad45cd.webp", text: "THE SEA BIRD AVIARY AT THE BRONX ZOO" },
+    {
+      photolink: "ftldThumbnails/10-airbeam-rental-tent-concept-anchor-industries-676719f3dee73.webp",
+      text: "AIRBEAM RENTAL TENT CONCEPT - ANCHOR INDUSTRIES",
     },
     {
-      photolink: "ftldThumbnails/Under the Sun1.JPG",
-      text: "Under the Sun Exhibition - Cooper Hewitt Museum - 1996",
+      photolink: "ftldThumbnails/10-harvard-exibition-shelter-to-spend-a-night-in-the-city-67671a0e1b20c.webp",
+      text: "HARVARD EXIBITION - SHELTER TO SPEND A NIGHT IN THE CITY",
     },
     {
-      photolink: "ftldThumbnails/Picture253.jpg",
-      text: "Woodstock Pavilion",
+      photolink: "ftldThumbnails/10-cirque-de-soleil-canopy-disneyworld-fl-67671a276b0ff.webp",
+      text: "CIRQUE DE SOLEIL CANOPY - DISNEYWORLD - FL",
     },
     {
-      photolink:
-        "ftldThumbnails/Worldwide Shelter - Full Scale Prototype - photo.JPG",
-      text: "Worldwide Disaster Relief Tents",
+      photolink: "ftldThumbnails/10-ftl-design-engineering-studio-brochures-67671a3de6a7d.webp",
+      text: "FTL DESIGN ENGINEERING STUDIO - BROCHURES",
     },
     {
-      photolink: "ftldThumbnails/churchst closeup copy.jpg",
-      text: "WTC - Urban Icons",
+      photolink: "ftldThumbnails/400-mesa-ftlde-67671a6a8a0d7.webp",
+      text: "MESA",
     },
-    { photolink: "ftldThumbnails/chile.jpg", text: "Zofri Mall - Iquique" },
+    {
+      photolink: "ftldThumbnails/10-teaching-tensile-strutures-67671a8006e38.webp",
+      text: "TEACHING TENSILE STRUCTURES",
+    },
+    
   ];
   const [imageRefs3, setImageRefs3] = useState([]);
   const [imageList3, setImageList3] = useState([]);
@@ -423,23 +434,106 @@ const Homepage = () => {
         console.log(error);
       });
   }, []);
-  const [imageList4, setImageList4] = useState([]);
-  const imageListRef4 = ref(storage, "ftlh/");
-  useEffect(() => {
-    listAll(imageListRef4).then((response) => {
-      const urlPromises = response.items.map((item) => {
-        return getDownloadURL(item).then((url) => [url]); // Wraps the URL in an array
-      });
 
-      Promise.all(urlPromises).then((urlArrays) => {
-        // Sort the array of URL arrays
-        const sortedUrlArrays = urlArrays.sort((a, b) =>
-          a[0].localeCompare(b[0])
-        );
-        setImageList4(sortedUrlArrays); // Sets the image list to a sorted array of arrays
-      });
+  const thumbnailList4 = [
+    {
+      photolink: "ftlhThumbnails/10-mgpts-tent-modular-general-purpose-tent-system-us-army-67671c7c5d73d.webp",
+      text: "MGPTS TENT - MODULAR GENERAL PURPOSE TENT SYSTEM - US ARMY",
+    },
+    {
+      photolink: "ftlhThumbnails/10-world-trade-center-site-urban-icons-concepts-67671d12e0766.webp",
+      text: "WORLD TRADE CENTER SITE - URBAN ICONS - CONCEPTS",
+    },
+    {
+      photolink: "ftlhThumbnails/10-under-the-sun-pvilion-cooper-hewitt-museum-nyc-67671d33f1337.webp",
+      text: "UNDER THE SUN PVILION - COOPER HEWITT MUSEUM - NYC",
+    },
+    {
+      photolink: "ftlhThumbnails/10-portable-skyscraper-concept-1-1992-67671d4b0db1d.webp",
+      text: "PORTABLE SKYSCRAPER - CONCEPT 1 - 1992",
+    },
+    {
+      photolink: "ftlhThumbnails/10-nasa-space-shuttle-advanced-inflatable-airlock-room-honeywell-67671d7266655.webp",
+      text: "NASA SPACE SHUTTLE - ADVANCED INFLATABLE AIRLOCK ROOM - HONEYWELL",
+    },
+    {
+      photolink: "ftlhThumbnails/1.0 INFLATABLE LUNAR HABITAT - HONEYWELL.webp",
+      text: "INFLATABLE LUNAR HABITAT - HONEYWELL",
+    },
+    {
+      photolink: "ftlhThumbnails/1.0 ECO-CABINA - CONCEPT 1 - COSTA RICA.webp",
+      text: "ECO-CABINA - CONCEPT 1 - COSTA RICA",
+    },
+    { 
+      photolink: "ftlhThumbnails/10-100-eco-cabina-concept-2-ftlh-67671fe0888bd.webp", 
+      text: "ECO-CABINA - CONCEPT 2" 
+    },
+    {
+      photolink: "ftlhThumbnails/10-eco-cabina-concept-3-bill-moss-67671ff4cfa47.webp",
+      text: "ECO-CABINA - CONCEPT 3 - BILL MOSS",
+    },
+    {
+      photolink: "ftlhThumbnails/40-676720158c510.webp",
+      text: "ECO-CABINA - CONCEPT 4",
+    },
+    {
+      photolink: "ftlhThumbnails/10-67672028cbb39.webp",
+      text: "BOSTON HARBOURLIGHTS CONCERT PAVILION",
+    },
+    { 
+      photolink: "ftlhThumbnails/10-baby-dome-millenium-celebration-london-67672071b3138.webp", 
+      text: "BABY DOME - MILLENIUM CELEBRATION - LONDON" 
+    },
+    {
+      photolink: "ftlhThumbnails/1.0-frame.webp",
+      text: "FRAME SUPPORT - POLE SUPPORT RENTAL TENT SYSTEM - CONCEPT - ANCHOR INDUSTRIES",
+    },
+    {
+      photolink: "ftlhThumbnails/10-atlanta-olympics-att-global-olympic-village-676720bcebc7e.webp",
+      text: "ATLANTA OLYMPICS - AT&T GLOBAL OLYMPIC VILLAGE",
+    },
+    {
+      photolink: "ftlhThumbnails/10-cancun-mall-676720d4c53b0.webp",
+      text: "CANCUN MALL",
+    },
+    {
+      photolink: "ftlhThumbnails/10-portable-skyscraper-concept-2-676720e9aa70d.webp",
+      text: "PORTABLE SKYSCRAPER - CONCEPT 2 - 2004",
+    },
+    { 
+      photolink: "ftlhThumbnails/1.0 THE MUSIC PAVILION COMPANY.webp", 
+      text: "THE MUSIC PAVILION COMPANY" 
+    },
+    {
+      photolink: "ftlhThumbnails/destiny-usa-mall-roof-concpet-rockwell-architects-6767222a03bc0.webp",
+      text: "DESTINY USA - MALL ROOF CONCPET - ROCKWELL ARCHITECTS",
+    },
+    {
+      photolink: "ftlhThumbnails/10-mahaffey-solar-frame-tent-67672242bafb9.webp",
+      text: "SOLAR RENTAL FRAME TENT - MAHAFFEY TENT",
+    },
+    
+  ];
+
+  const [imageRefs4, setImageRefs4] = useState([]);
+  const [imageList4, setImageList4] = useState([]);
+
+  useEffect(() => {
+    let imagePromises = thumbnailList4.map((path) => {
+      const imageRef = ref(storage, path.photolink);
+      setImageRefs4(getDownloadURL(imageRef));
+      return getDownloadURL(imageRef);
     });
+    Promise.all(imagePromises)
+      .then((urls) => {
+        console.log(urls); // Log the URLs
+        setImageList4(urls);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
+
   const thumbnailList5 = [
     {
       photolink: "ftlsProjects/ftlsThumbnails/Austin City Limits Canopy.jpg",
@@ -765,13 +859,13 @@ const Homepage = () => {
                 <div className={styles.company}>FTL HAPPOLD</div>
               </div>
               <div className={styles.photobox}>
-                {imageList4.map((url, index) => {
+              {imageList4.map((url, index) => {
                   return (
                     <img
                       key={index} // It's important to provide a unique key for each item in a list
                       className={styles.photo}
-                      onClick={() => setIndex(url[0], "/ftlh", imageList4)}
-                      src={url[0]}
+                      onClick={() => setIndex(url, "/ftlh", imageList4)}
+                      src={url}
                       alt={`Image ${index}`} // Always provide an alt attribute for accessibility
                     />
                   );
