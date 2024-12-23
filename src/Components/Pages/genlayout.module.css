@@ -74,6 +74,7 @@
   height: 100%;
   width: auto;
   margin-left: 0.75em;
+  max-width: 100vw;
 }
 .photo:hover {
   cursor: pointer;

@@ -536,69 +536,35 @@ const Homepage = () => {
 
   const thumbnailList5 = [
     {
-      photolink: "ftlsProjects/ftlsThumbnails/Austin City Limits Canopy.jpg",
-      text: "Austin City Limits Canopy",
+      photolink: "ftlsThumbnails/10-powermod-solar-frame-tent-rental-tent-system-aztec-tents-6769ccc8a32dc.webp",
+      text: "POWERMOD - SOLAR FRAME TENT - RENTAL TENT SYSTEM - AZTEC TENTS",
+    },
+    { photolink: "ftlsThumbnails/10-powermod-solar-frame-tent-rental-tent-system-classic-tents-6769cd28c8162.webp", text: "POWERMOD -  SOLAR FRAME TENT - RENTAL TENT SYSTEM - CLASSIC TENTS" },
+    { photolink: "ftlsThumbnails/10-solar-frame-tent-rental-tent-system-mahaffey-tent-6769cdd536499.webp", text: "SOLAR FRAME TENT - RENTAL TENT SYSTEM - MAHAFFEY TENT" },
+    { photolink: "ftlsThumbnails/10-powermod-solar-frame-tent-rental-tent-system-dallas-cowboys-6769ce0e639d8.webp", text: "POWERMOD - SOLAR FRAME TENT - RENTAL TENT SYSTEM - DALLAS COWBOYS" },
+    { photolink: "ftlsThumbnails/1.0.jpg", text: "FTL SOLAR - BACKGROUND" },
+    {
+      photolink: "ftlsThumbnails/10-118-powermod-portable-charging-station-jacotas-us-army-ftls-6769ce6f334bd.webp",
+      text: "POWERMOD - PORTABLE CHARGING STATION - JACOTAS - US ARMY",
     },
     {
-      photolink: "ftlsProjects/ftlsThumbnails/013.JPG",
-      text: "Aztec Tents - 10'x10' Solar Rental Tent",
+      photolink: "ftlsThumbnails/1.0 POWERMOD - FOLD-UP SOLAR CHARGER.webp",
+      text: "POWERMOD - FOLD-UP SOLAR CHARGER",
+    },
+    { photolink: "ftlsThumbnails/1.0 POWERMOD - CAR PARK SOLAR CHARGING STATION MODULES.webp", text: "POWERMOD - CAR PARK SOLAR CHARGING STATION MODULES" },
+   
+    { photolink: "ftlsThumbnails/10-powersquad-us-army-6769d09d781c0.webp", text: "POWERSQUAD - US ARMY" },
+    {
+      photolink: "ftlsThumbnails/10-powermod-charging-stations-pole-support-wind-test-graphic-6769d0c37cca8.webp",
+      text: "POWERMOD - CHARGING STATIONS - POLE SUPPORT - WIND TEST, GRAPHIC",
     },
     {
-      photolink:
-        "ftlsProjects/ftlsThumbnails/10' x 10' Solar Sculpture Tent- Powering Two Amplifiers LR (2).JPG",
-      text: "Boston School",
+      photolink: "ftlsThumbnails/10-certification-for-sperry-rental-tent-systems-sperry-tents-6769d0f7748ff.webp",
+      text: "CERTIFICATION FOR SPERRY RENTAL TENT SYSTEMS - SPERRY TENTS",
     },
-    {
-      photolink: "ftlsProjects/ftlsThumbnails/PM.jpg",
-      text: "Classic Tents - 20'x20' Solar Rental Tent",
-    },
-    {
-      photolink: "ftlsProjects/ftlsThumbnails/cowboys4.jpg",
-      text: "Dallas Cowboys Solar Tent",
-    },
-    {
-      photolink:
-        "ftlsProjects/ftlsThumbnails/FTL Solar in Fabric Architecture Magazine - LR_page-0001.jpg",
-      text: "Fabric Architecture Magazine Article 1",
-    },
-    {
-      photolink: "ftlsProjects/ftlsThumbnails/FTL SOLAR - OVERVIEW_page-0001.jpg",
-      text: "FTL Solar - logos",
-    },
-    {
-      photolink: "ftlsProjects/ftlsThumbnails/JOCOTAS3 LR.JPG",
-      text: "JOCOTAS Charging Sail - US Army - 2010",
-    },
-
-    {
-      photolink: "ftlsProjects/ftlsThumbnails/rendering3.jpg",
-      text: "Millenium Park Sound Mix Booth -2008",
-    },
-    {
-      photolink:
-        "ftlsProjects/ftlsThumbnails/PowerMod 20x20 Single-Pole Power Plant Array.jpeg",
-      text: "Portable Power Plant",
-    },
-    {
-      photolink: "ftlsProjects/ftlsThumbnails/Slide110.JPG",
-      text: "PowerFold",
-    },
-    {
-      photolink: "ftlsProjects/ftlsThumbnails/2008 - POWERMOD.jpg",
-      text: "PowerMod - 2009",
-    },
-    {
-      photolink: "ftlsProjects/ftlsThumbnails/PP1 Carpark LR.JPG",
-      text: "PowerPark - 2007",
-    },
-    {
-      photolink: "ftlsProjects/ftlsThumbnails/2012 - SOLAR CHARGING PANEL.jpg",
-      text: "Solar Charging Panel - 2012",
-    },
-    {
-      photolink: "ftlsProjects/ftlsThumbnails/Solar Sail model 2.ashx (4).jpg",
-      text: "Solar Sail Model",
-    },
+    { photolink: "ftlsThumbnails/10-powermod-charging-stations-pole-support-waterfront-6769d10ecbd1d.webp", text: "POWERMOD - CHARGING STATIONS - POLE SUPPORT - WATERFRONT" },
+   
+    
   ];
 
   const [imageRefs5, setImageRefs5] = useState([]);

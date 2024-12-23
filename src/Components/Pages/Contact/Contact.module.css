@@ -1,9 +1,10 @@
 .container{
-    height:100vh;
+    height:82vh;
+    max-height:82vh;
     width:100%;
     display:flex;
     justify-content: center;
-   
+    padding: 0;
     box-sizing: border-box;
   
 }
