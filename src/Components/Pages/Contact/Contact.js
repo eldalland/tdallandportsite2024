@@ -3,7 +3,7 @@ import Navbar from "../../Navbar/Navbar";
 import styles from "./Contact.module.css";
 
 const Contact = () => {
-    const inputRef = useRef(null);
+  const inputRef = useRef(null);
   const [inputValue, setInputValue] = useState("");
   const [isInputFocused, setIsInputFocused] = useState(false);
   const handleChange = (e) => {
@@ -17,7 +17,7 @@ const Contact = () => {
     inputRef.current.focus();
   };
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
       e.target.form.submit();
     }
@@ -32,13 +32,17 @@ const Contact = () => {
       <Navbar />
       <div className={styles.container}>
         <div className={styles.formcontainer}>
-          <form action = "https://formsubmit.co/tentshape@gmail.com" method="POST">
-           
-            <input
-            type="text"
-            name="Message"
-            required
-              ref = {inputRef}
+          <form
+            action="https://formsubmit.co/tentshape@gmail.com"
+            method="POST"
+          >
+            <textarea
+              type="text"
+              name="Message"
+              required
+              rows="10"
+              maxLength={520}
+              ref={inputRef}
               value={inputValue}
               onFocus={handleFocus}
               onBlur={handleBlur}
@@ -46,7 +50,7 @@ const Contact = () => {
               onKeyDown={handleKeyDown}
               className={styles.invisinput}
               placeholder="Type your message here"
-            ></input>
+            ></textarea>
           </form>
         </div>
       </div>
