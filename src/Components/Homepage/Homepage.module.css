@@ -1,6 +1,5 @@
 
 
-
 .flexcontainer {
   display: block;
   
@@ -13,32 +12,7 @@
   box-sizing: border-box;
   user-select: none; /* Prevent text selection */
 }
-@media screen and (max-width:600px){
-  .flexcontainer{
-    overflow: auto !important; /* Allow scrolling */
-    max-height: none !important; /* Remove max-height*/ 
-  }
-  .titlebox{
-   
-    width:fit-content;
-    
-    display: inline-block;
-    white-space: nowrap; /* Prevent text from wrapping */
-  }
- 
-  .names{
-    font-size:0.63rem;
-    min-width:30vw;
-   
-    display: inline-block;
-    white-space: nowrap;
-  }
-  .company{
-    font-size:1.5rem;
-    white-space: nowrap; /* Prevent text from wrapping */
-  }
-  
-}
+
 .flexcontainer::-webkit-scrollbar {
   display: none !important;
 }
