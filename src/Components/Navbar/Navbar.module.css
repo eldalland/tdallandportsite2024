@@ -57,3 +57,12 @@ display: none;
 .link:hover{
 cursor: pointer;
 }
+.navspan{
+    boox-sizing: border-box;
+}
+@media screen and (max-width:600px){
+    .span{
+        font-size: 1rem;
+    }
+    
+}
