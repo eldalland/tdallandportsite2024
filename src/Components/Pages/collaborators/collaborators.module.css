@@ -1,3 +1,9 @@
+@media screen and (max-width: 600px) {
+    .no-scroll {
+      overflow: auto !important; /* Allow scrolling */
+      max-height: none !important; /* Remove max-height constraint */
+    }
+    }
 .container{
     height:100%;
     width:auto;
