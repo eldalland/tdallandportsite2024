@@ -331,7 +331,7 @@ const Pvilion = () => {
       photolink: "pvilionThumbnails/10-solar-charging-light-pole-plugerville-tx-677077fa20b82.webp",
       text: "SOLAR CHARGING LIGHT POLE - PLUGERVILLE, TX",
     },
-    { photolink: "pvilionThumbnails/1.0 Solar Umbrellas.jpg", text: "SOLAR UMBRELLAS" },
+    
    
     { photolink: "pvilionThumbnails/10-pvilion-brochure-67707fc09cb10.webp", text: "PVILION BROCHURE" },
   

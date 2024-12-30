@@ -71,10 +71,12 @@ const Homepage = () => {
     { photolink: "ezbuildersThumbnails/Thesis.webp", text: "Cutting Pattern Program and Physical Models" },
    
     { photolink: "ezbuildersThumbnails/Umass.webp", text: "UMass" },
-  
-    { photolink: "ezbuildersThumbnails/1.0 INFLUENCERS 1955 - HYPAR - FREI OTTO.webp", text: "" },
-
+    {photolink: "ezbuildersThumbnails/CENTURY TENTS - Arts Quad.webp", text: "30 YEARS LATER... CENTURY AND GENESIS RENTAL TENTS ON THE ARTS QUAD FOR HOMECOMINGS" },
+    {photolink: "ezbuildersThumbnails/CORNELL ALUMNI MAGAZINE 1.webp", text: "40 YEARS LATER... 2012 - CORNELL ALUMNI MAGAZINE" },
+    { photolink: "ezbuildersThumbnails/1.0 INFLUENCERS 1955 - HYPAR - FREI OTTO.webp", text: "Influencers" },
+ 
     
+
   ];
 
 
@@ -765,7 +767,7 @@ const Homepage = () => {
       photolink: "pvilionThumbnails/10-solar-charging-light-pole-plugerville-tx-677077fa20b82.webp",
       text: "SOLAR CHARGING LIGHT POLE - PLUGERVILLE, TX",
     },
-    { photolink: "pvilionThumbnails/1.0 Solar Umbrellas.jpg", text: "SOLAR UMBRELLAS" },
+   
    
     { photolink: "pvilionThumbnails/10-pvilion-brochure-67707fc09cb10.webp", text: "PVILION BROCHURE" },
   

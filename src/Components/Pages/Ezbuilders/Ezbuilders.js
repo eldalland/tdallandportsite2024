@@ -171,8 +171,9 @@ const Ezbuilders = () => {
     { photolink: "ezbuildersThumbnails/Thesis.webp", text: "Cutting Pattern Program and Physical Models" },
    
     { photolink: "ezbuildersThumbnails/Umass.webp", text: "UMass" },
-    {photolink: "ezbuildersThumbnails/CORNELL ALUMNI MAGAZINE 1.webp", text: "Cornell Alumni Magazine" },
-    {photolink: "ezbuildersThumbnails/CENTURY TENTS - Arts Quad.webp", text: "CENTURY TENTS - Arts Quad" },
+
+    {photolink: "ezbuildersThumbnails/CENTURY TENTS - Arts Quad.webp", text: "30 YEARS LATER... CENTURY AND GENESIS RENTAL TENTS ON THE ARTS QUAD FOR HOMECOMINGS" },
+    {photolink: "ezbuildersThumbnails/CORNELL ALUMNI MAGAZINE 1.webp", text: "40 YEARS LATER... 2012 - CORNELL ALUMNI MAGAZINE" },
     { photolink: "ezbuildersThumbnails/1.0 INFLUENCERS 1955 - HYPAR - FREI OTTO.webp", text: "Influencers" },
  
     
@@ -194,6 +195,14 @@ const Ezbuilders = () => {
     "ezbuildersProjects/centuryTents/",
     "ezbuildersProjects/influencers/",
     
+  ];
+
+  const influencerList = [
+    "1955 - HYPAR - FREI OTTO",
+    "1967 - EXPO - MONTREAL - FREI OTTO",
+    "1970 - FREI OTTO - TENSION STRUCTURES, BY CONRAD ROLAND",
+    "1972 - MUNICH OLYMPIC STADIUM - FREI OTTO",
+    "1973 - THE DYMAXION WORLD OF BUCKMINSTER FULLER, BY ROBERT MARKS",
   ];
 
   const [currentFolder, setCurrentFolder] = useState(LinkList[0]);
@@ -320,14 +329,24 @@ const Ezbuilders = () => {
         className={isFullScreen ? genstyles.modalcontainer : genstyles.hidden}
       >
         {pphotos.map((url, index) => (
-          
+        <div className={genstyles.influencercontainer}>
             <img
               ref={imageRefs[index]}
               className={isFullScreen ? genstyles.modalImg : genstyles.hidden}
               src={url}
             ></img>
-         
+           
+            {url.includes("influencers") && (
+            <div className={genstyles.influenceroverlay}>
+            <div className={genstyles.influencerphotoverlay}></div>
+                <div className={genstyles.influenceroverlaytext}>
+                  {influencerList[index]}
+                </div>
+            </div>
+            )}
+         </div>
         ))}
+         
       </div>
       <div ref={scrollContainer} className={genstyles.flexcontainer}>
         <div className={genstyles.flexitemleft}> </div>

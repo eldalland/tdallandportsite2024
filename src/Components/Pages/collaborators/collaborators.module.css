@@ -41,10 +41,11 @@
   .footer{
     margin-bottom:2.5%;
     font-weight: bold;
+    color:gray
   }
 
   span{
-    color:gray
+    color:black
   }
   span:hover{
     cursor: pointer;

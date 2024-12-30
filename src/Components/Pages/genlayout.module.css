@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: row;
   scroll-behavior: smooth;
- 
+  user-select: none; /* Prevent text selection */
 }
 @media screen and (max-width:600px){
   .flexcontainer{
@@ -29,14 +29,17 @@
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   display:flex;
+  justify-content: center;
   flex-direction:row;
   position: absolute;
-
   top:0;
   left:0;
   z-index:998;
   background-color: rgb(255, 255, 255); /* Fallback color */
   background-color: rgba(255, 255, 255, 0.9); /* Black w/ opacity */
+  outline: none; /* Remove focus outline */
+ 
+  user-select: none; /* Prevent text selection */
 }
 @media screen and (max-width: 600px) {
   .modalcontainer {
@@ -98,22 +101,72 @@
   position: absolute; /* Position the overlay relative to the container */
   bottom: 0;
   left: 0;
-  width: calc(100% - 0.75rem); /* Set the overlay width to match the container */
+  width: calc(100% - 1.05rem); /* Set the overlay width to match the container */
   height: 10%; /* Set the overlay height to match the container */
   opacity: 0%; /* Adjust overlay opacity as needed */
   /* Set overlay background color */
   overflow: hidden;
-  margin-left: 0.75rem;
+  margin-left: 1rem;
   display: flex;
   align-items: center;
 }
 @media screen and (max-width: 600px) {
   .overlay {
     opacity: 100%;
+    width: 100%;
   }
   
 }
+.influencercontainer{
+  height:100vh;
+  max-height:100vh;
+  width:100%;
 
+ 
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  width:fit-content;
+}
+
+.influenceroverlay{
+  position: absolute; /* Position the overlay relative to the container */
+  bottom: 0;
+  left:0;
+  width: calc(100% - 0.4rem); /* Set the overlay width to match the container */
+  height: 10%; /* Set the overlay height to match the container */
+  opacity: 100%; /* Adjust overlay opacity as needed */
+  /* Set overlay background color */
+  overflow: hidden;
+ 
+  display: flex;
+
+  align-items: center;
+  z-index:999;
+}
+@media screen and (max-width: 600px) {
+  .influenceroverlay {
+    bottom:20%;
+  }
+  
+}
+.influenceroverlaytext{
+ /* Position the overlay text relative to the photoverlay */
+  font-weight: bold;
+  letter-spacing: .05rem;
+  color: white;
+  width:100%;
+  font-size: 1rem;
+  font-family: "Mukta", sans-serif;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  z-index: 999; /* Ensure text is displayed over the background */
+  animation: marquee 20s linear infinite;
+}
 .photocontainer:hover .overlay {
   opacity: 100%;
 }
@@ -129,7 +182,16 @@
 
  
 }
+.influencerphotoverlay{
+  position: absolute; /* Position the overlay relative to the container */
 
+  width: 100%; /* Set the overlay width to match the container */
+  height: 100%; /* Set the overlay height to match the container */
+  opacity: 0.6; /* Adjust overlay opacity as needed */
+  background-color: gray; /* Set overlay background color */
+
+ 
+}
 
 .overlaytext{
   position: absolute; /* Position the overlay text relative to the photoverlay */

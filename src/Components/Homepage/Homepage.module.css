@@ -10,7 +10,7 @@
   
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
-
+  user-select: none; /* Prevent text selection */
 }
 
 .flexcontainer::-webkit-scrollbar {
