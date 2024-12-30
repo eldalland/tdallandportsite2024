@@ -30,24 +30,9 @@ const Pvilion = () => {
   const { scrollUrl } = location.state || {};
   const [slideIndex, setSlideIndex] = useState(0);
 
-  const slide = () => {
-    slideIndex < numPhotos - 1
-      ? scrollModal.current.scrollBy({
-          left: scrollModal.current.offsetWidth, // 100% of the div's width
-          behavior: "smooth", // Optional, for smooth scrolling
-        })
-      : (scrollModal.current.scrollLeft = 0 * scrollModal.current.offsetWidth);
-  };
-
-  const backSlide = () => {
-    slideIndex > 0
-      ? scrollModal.current.scrollBy({
-          left: -scrollModal.current.offsetWidth, // 100% of the div's width
-          behavior: "smooth", // Optional, for smooth scrolling
-        })
-      : (scrollModal.current.scrollLeft =
-          numPhotos * scrollModal.current.offsetWidth);
-  };
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top on page load
+  }, []);
 
   const close = () => {
     setIsFullscreen(false);
