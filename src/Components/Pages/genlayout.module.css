@@ -1,5 +1,5 @@
 .noscroll{
-
+  box-sizing: border-box;
 }
 @media screen and (max-width: 600px) {
   .noscroll{
@@ -233,9 +233,7 @@
   animation: marquee 20s linear infinite;
 }
 
-.overlaytext.large{
 
-}
 @keyframes marquee {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
@@ -264,10 +262,10 @@
 
 }
 
-/* Handle on hover */
+/* Handle on hover 
 .flexcontainer::-webkit-scrollbar-thumb:hover {
 }
-
+*/
 .modal {
   position: relative; /* Stay in place */
   top: 0;
