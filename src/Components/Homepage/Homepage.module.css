@@ -1,5 +1,10 @@
 
-
+.box{
+  height: 100%;
+  max-height:100vh;
+  display: flex;
+  flex-direction: column;
+}
 .flexcontainer {
   display: block;
   
@@ -92,6 +97,9 @@
   letter-spacing: .05rem;
   height:50%;
  
+}
+.company:hover{
+  cursor: default;
 }
 
 @media screen and (max-width:1024px){

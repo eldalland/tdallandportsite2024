@@ -319,7 +319,7 @@ const Ezbuilders = () => {
 
   return (
     <>
-    <div className={genstyles.noscroll}>
+    <div className={genstyles.box}>
       <NavbarEZ text="E-Z BUILDERS" />
       <div className={isFullScreen ? genstyles.close : genstyles.hidden}>
         <img src={CloseIcon} style={{width:"40px",}} onClick={close} />

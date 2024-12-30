@@ -888,6 +888,7 @@ const Homepage = () => {
 
   return (
     <>
+    <div className={styles.box}>
       <Navbar />
 
       <div className={styles.flexcontainer} ref={scrollContainer}>
@@ -1025,6 +1026,7 @@ const Homepage = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

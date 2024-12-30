@@ -30,24 +30,30 @@ const FTLD = () => {
   const { scrollUrl } = location.state || {};
   const [slideIndex, setSlideIndex] = useState(0);
 
-  const slide = () => {
-    slideIndex < numPhotos - 1
-      ? scrollModal.current.scrollBy({
-          left: scrollModal.current.offsetWidth, // 100% of the div's width
-          behavior: "smooth", // Optional, for smooth scrolling
-        })
-      : (scrollModal.current.scrollLeft = 0 * scrollModal.current.offsetWidth);
-  };
 
-  const backSlide = () => {
-    slideIndex > 0
-      ? scrollModal.current.scrollBy({
-          left: -scrollModal.current.offsetWidth, // 100% of the div's width
-          behavior: "smooth", // Optional, for smooth scrolling
-        })
-      : (scrollModal.current.scrollLeft =
-          numPhotos * scrollModal.current.offsetWidth);
-  };
+
+    const [navbarText, setNavbarText] = useState("FTL DESIGN ENGINEERING STUDIO");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 600 || window.innerHeight <= 500) {
+        setNavbarText("FTL D&E STUDIO");
+      } else {
+        setNavbarText("FTL DESIGN ENGINEERING STUDIO");
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const close = () => {
     setIsFullscreen(false);
@@ -457,7 +463,7 @@ const FTLD = () => {
 
   return (
     <>
-      <NavbarEZ text="FTL DESIGN ENGINEERING STUDIO" />
+      <NavbarEZ text={navbarText} />
       <div className={isFullScreen ? genstyles.close : genstyles.hidden}>
         <img src={CloseIcon} style={{width:"40px",}} onClick={close} />
       </div>
