@@ -34,7 +34,6 @@ function App() {
    <Route path ="/collaboratorssolar" element = {<CollaboratorsSOLAR/>} />
    <Route path ="/collaboratorspvilion" element = {<CollaboratorsPVILION/>} />
    <Route path ="/contact" element = {<Contact/>} />
-   <Route path="/contact" element={''} />
 </Routes>
 </HashRouter>
 </>

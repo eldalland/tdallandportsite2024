@@ -1,3 +1,12 @@
+html, body, #root {
+  height: 100%;
+  max-height: 100vh; /* Set max height to 100% of the viewport height */
+  overflow: hidden; /* Prevent scrolling */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .flexcontainer {
   height: 83.5vh;
   max-height: 83.5vh;
@@ -87,6 +96,7 @@
 @media screen and (max-width: 600px) {
   .photo {
     height:80%;
+    object-fit: cover;
   }
   
 }
@@ -95,6 +105,7 @@
   height:100%;
   position: relative; /* Add relative positioning */
   display: inline-block;
+  
 }
 @media screen and (max-width: 600px) {
   .photocontainer {
