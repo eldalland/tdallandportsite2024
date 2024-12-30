@@ -16,6 +16,8 @@
 @media screen and (max-width:600px){
   .flexcontainer{
       height: 86vh;
+      justify-content: center;
+      align-items: center;
   }
   
 }
@@ -82,7 +84,12 @@
 .photo:hover {
   cursor: pointer;
 }
-
+@media screen and (max-width: 600px) {
+  .photo {
+    height:80%;
+  }
+  
+}
 
 .photocontainer{
   height:100%;
@@ -114,6 +121,7 @@
   .overlay {
     opacity: 100%;
     width: 100%;
+    bottom: 20%;
   }
   
 }
