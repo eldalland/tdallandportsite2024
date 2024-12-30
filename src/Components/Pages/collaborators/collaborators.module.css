@@ -1,9 +1,4 @@
-@media screen and (max-width: 600px) {
-    .no-scroll {
-      overflow: auto !important; /* Allow scrolling */
-      max-height: none !important; /* Remove max-height constraint */
-    }
-    }
+
 .container{
     height:100%;
     width:auto;
@@ -12,7 +7,13 @@
     display: flex;
     flex-direction: column;
 }
-
+@media screen and (max-width:600px){
+    .container{
+        overflow: auto !important; /* Allow scrolling */
+        max-height: none !important; /* Remove max-height */
+    }
+    
+}
 .contentbox{
     width: fit-content;
     height:fit-content;
