@@ -1,7 +1,7 @@
 .nav{
     box-sizing: border-box;
     width:100%;
-    height:16vh;
+    height:14.2vh;
     background-color: white;
     display: flex;
     justify-content: flex-start;
@@ -14,11 +14,12 @@
     font-weight:800;
     padding: 0;
     user-select: none; /* Prevent text selection */
+   
     }
 
 @media screen and (max-width:600px){
     .nav{
-        height: 14vh;
+        height: 7.5vh;
     }
     
 }
@@ -37,10 +38,12 @@ display: none;
     font-family: "Mukta", sans-serif;
     letter-spacing: .05rem;
     
+    display: flex;
+    align-items: center;
 }   
 @media screen and (max-width:600px){
     .title{
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
 }
@@ -58,10 +61,13 @@ display: none;
 cursor: pointer;
 }
 .navspan{
-    boox-sizing: border-box;
+    box-sizing: border-box;
+    font-weight:normal;
+    font-size:2rem;
+     opacity:100%;
 }
 @media screen and (max-width:600px){
-    .span{
+    .navspan{
         font-size: 1rem;
     }
     

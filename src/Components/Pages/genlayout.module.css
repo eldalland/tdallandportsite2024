@@ -3,7 +3,8 @@
   max-height:100vh;
   display: flex;
   flex-direction: column;
-  
+
+  overflow:hidden;
 }
 
 @media screen and (max-width:600px){
@@ -15,8 +16,8 @@ overflow-y: hidden;
 }
 
 .flexcontainer {
-  height: 83.5vh;
-  max-height: 83.5vh;
+  height: 85.8vh;
+  max-height: 85.8vh;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -31,9 +32,11 @@ overflow-y: hidden;
 }
 @media screen and (max-width:600px){
   .flexcontainer{
-      height: 86vh;
+      height: 92.5vh;
+      max-height: 92.5vh;
       justify-content: center;
       align-items: center;
+     
   }
   
 }
@@ -78,18 +81,14 @@ overflow-y: hidden;
   justify-content: center;
 }
 
-.flexitemleft {
-  width: 6%;
-  height: 100%;
-  position: sticky;
-  height: 81vh;
-}
+
 
 .flexitemright {
   width: 94%;
   display: flex;
   flex-direction: row;
-  height: 70vh;
+  height: 100%;
+  margin-left:11vh;
 }
 
 .photo {
@@ -103,21 +102,23 @@ overflow-y: hidden;
 }
 @media screen and (max-width: 600px) {
   .photo {
-    height:80%;
+    width:auto;
+    max-width:300vw;
+ 
     object-fit: cover;
   }
   
 }
 
 .photocontainer{
-  height:100%;
+  height:74.6vh;
   position: relative; /* Add relative positioning */
   display: inline-block;
-  
+  border: 3px solid yellow;
 }
 @media screen and (max-width: 600px) {
   .photocontainer {
-    max-width:100vw;
+   height:85vh;
   }
   
 }
@@ -140,7 +141,7 @@ overflow-y: hidden;
   .overlay {
     opacity: 100%;
     width: 100%;
-    bottom: 20%;
+    bottom:0;
   }
   
 }
@@ -159,7 +160,12 @@ overflow-y: hidden;
 
   border: 5px solid black;
 }
-
+@media screen and (max-width: 600px) {
+  .influencercontainer {
+ 
+  }
+  
+}
 .influenceroverlay{
   position: absolute; /* Position the overlay relative to the container */
   bottom: 0;
@@ -195,9 +201,7 @@ overflow-y: hidden;
   z-index: 999; /* Ensure text is displayed over the background */
   animation: marquee 20s linear infinite;
 }
-.photocontainer:hover .overlay {
-  opacity: 100%;
-}
+
 
 .photoverlay{
   position: absolute; /* Position the overlay relative to the container */
@@ -230,10 +234,9 @@ overflow-y: hidden;
   font-size: 1rem;
   font-family: "Mukta", sans-serif;
   display: flex;
-  align-content: center;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 1; /* Ensure text is displayed over the background */
-  animation: marquee 20s linear infinite;
+  margin-left:5vh;
 }
 
 
@@ -241,34 +244,44 @@ overflow-y: hidden;
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
 }
-
-.flexcontainer::-webkit-scrollbar {
-  width: 20px;
-  height: 5px;
-
-}
 .modalcontainer::-webkit-scrollbar {
- display: none;
+  display: none;
+  height:.25vh;
+ }
 
-}
-/* Track */
 .flexcontainer::-webkit-scrollbar-track {
-  height: 5px;
-  border-radius: 10px;
- 
+  background: none;
+
 }
 
-/* Handle */
+/* Scrollbar */
+/* Scrollbar Track */
+.flexcontainer::-webkit-scrollbar-track {
+ display: none;
+}
+.flexcontainer::-webkit-scrollbar {
+
+  display: none; /* Hide scrollbar by default */
+}
+
 .flexcontainer::-webkit-scrollbar-thumb {
-  background: gray;
-  border-radius: 10px;
+  background: #5555; /* Color of the scrollbar */
+  border-radius: 10px; /* Roundness of the scrollbar */
 
 }
+/* Show scrollbar when scrolling */
 
-/* Handle on hover 
+
+.flexcontainer.scrolling::-webkit-scrollbar {
+  display: block; /* Show scrollbar when scrolling */
+  height:1vh;
+}
+
+/* Handle on hover */
 .flexcontainer::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker background on hover */
+  border-radius:10px;
 }
-*/
 .modal {
   position: relative; /* Stay in place */
   top: 0;
@@ -373,6 +386,9 @@ width: min-content;
 }
 .visible{
   display:block;
+}
+.solid{
+  opacity: 100%;
 }
 .ratio{
   z-index: 999;

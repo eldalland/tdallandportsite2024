@@ -5,7 +5,7 @@ import Homepage from "../Homepage/Homepage";
 const Layout = () => {
   return( 
   <>
-<Homepage clasName={styles.Hpage}/>
+<Homepage className={styles.Hpage}/>
   </>
   );
 };

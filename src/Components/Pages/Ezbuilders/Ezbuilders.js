@@ -29,25 +29,27 @@ const Ezbuilders = () => {
   const location = useLocation();
   const { scrollUrl } = location.state || {};
   const [slideIndex, setSlideIndex] = useState(0);
+  const scrollContainer = useRef(null);
+  const [isScrolling, setIsScrolling] = useState(false);
 
-  const slide = () => {
-    slideIndex < numPhotos - 1
-      ? scrollModal.current.scrollBy({
-          left: scrollModal.current.offsetWidth, // 100% of the div's width
-          behavior: "smooth", // Optional, for smooth scrolling
-        })
-      : (scrollModal.current.scrollLeft = 0 * scrollModal.current.offsetWidth);
-  };
 
-  const backSlide = () => {
-    slideIndex > 0
-      ? scrollModal.current.scrollBy({
-          left: -scrollModal.current.offsetWidth, // 100% of the div's width
-          behavior: "smooth", // Optional, for smooth scrolling
-        })
-      : (scrollModal.current.scrollLeft =
-          numPhotos * scrollModal.current.offsetWidth);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolling(true);
+      clearTimeout(scrollContainer.current.scrollTimeout);
+      scrollContainer.current.scrollTimeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 1000); // Hide scrollbar after 1 second of inactivity
+    };
+
+    const container = scrollContainer.current;
+    container.addEventListener("scroll", handleScroll);
+
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 
   const close = () => {
     setIsFullscreen(false);
@@ -110,7 +112,7 @@ const Ezbuilders = () => {
         console.log(error);
       });
   }, []);
-  const scrollContainer = useRef(null);
+
   const scrollModal = useRef(null);
 
   // Function to handle the horizontal scrolling
@@ -349,7 +351,7 @@ const Ezbuilders = () => {
         ))}
          
       </div>
-      <div ref={scrollContainer} className={genstyles.flexcontainer}>
+      <div ref={scrollContainer} className={`${genstyles.flexcontainer} ${isScrolling ? genstyles.scrolling : ''}`}>
         <div className={genstyles.flexitemleft}> </div>
         <div className={genstyles.flexitemright}>
           {photos.map((url, index) => (

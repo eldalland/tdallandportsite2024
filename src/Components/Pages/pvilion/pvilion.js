@@ -29,6 +29,9 @@ const Pvilion = () => {
   const location = useLocation();
   const { scrollUrl } = location.state || {};
   const [slideIndex, setSlideIndex] = useState(0);
+  const [inView, setInView] = useState([]);
+  const photoRefs = useRef([]);
+
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to top on page load
@@ -43,25 +46,7 @@ const Pvilion = () => {
   useEffect(() => {
     console.log(scrollModal.current); // Logs the current value of the ref
   }, []);
-  const decrementIndex = () => {
-    setCurrentIndex((prevIndex) => {
-      if (prevIndex > 0) {
-        return prevIndex - 1;
-      } else {
-        return imageList.length - 1;
-      }
-    });
-  };
 
-  const incrementIndex = () => {
-    setCurrentIndex((prevIndex) => {
-      if (prevIndex < imageList.length - 1) {
-        return prevIndex + 1;
-      } else {
-        return 0;
-      }
-    });
-  };
 
   const toggle = () => {
     if (isFullScreen) {
@@ -497,24 +482,43 @@ const Pvilion = () => {
 
     return () => window.removeEventListener("resize", updateSlideIndex);
   }, []);
-
   useEffect(() => {
-    if (scrollUrl && photos.length > 0) {
-      const index = photos.findIndex((url) => url === scrollUrl);
-      if (index !== -1) {
-        const imageElement = scrollContainer.current.querySelector(
-          `img[src="${scrollUrl}"]`
-        );
-        if (imageElement) {
-          const containerWidth = scrollContainer.current.offsetWidth;
-          const imageRect = imageElement.getBoundingClientRect();
-          const imageWidth = imageRect.width;
-          const scrollLeft = imageRect.left - (containerWidth - imageWidth) / 2;
-          scrollContainer.current.scrollLeft = scrollLeft;
-        }
+    photoRefs.current = photoRefs.current.slice(0, photos.length).map((_, i) => photoRefs.current[i] || createRef());
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = photoRefs.current.indexOf(entry.target);
+          if (index !== -1) {
+            setInView((prev) => {
+              const newInView = [...prev];
+              newInView[index] = entry.isIntersecting;
+              return newInView;
+            });
+          }
+        });
+      },
+      {
+        root: null, // Use the viewport as the root
+        threshold: 0.1, // Trigger when 10% of the element is in view
       }
-    }
-  }, [scrollUrl, photos]);
+    );
+
+    photoRefs.current.forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      photoRefs.current.forEach((ref) => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, [photos]);
+
   return (
     <>
       <NavbarEZ text="PVILION" />
@@ -537,10 +541,10 @@ const Pvilion = () => {
         ))}
       </div>
       <div ref={scrollContainer} className={genstyles.flexcontainer}>
-        <div className={genstyles.flexitemleft}> </div>
+      
         <div className={genstyles.flexitemright}>
           {photos.map((url, index) => (
-            <div key={index} className={genstyles.photocontainer}>
+            <div key={index} ref={photoRefs.current[index]} className={genstyles.photocontainer}>
               <img
                 ref={imageRefs[index]}
                 className={genstyles.photo}
@@ -552,7 +556,7 @@ const Pvilion = () => {
               />
               {/* Hover overlay with text */}
               <div className={genstyles.overlay}>
-                <div className={genstyles.photoverlay}></div>
+                <div className={`${genstyles.overlay} ${inView[index] ? genstyles.solid : ''}`}></div>
                 <div className={genstyles.overlaytext}>
                   {thumbnailList[index].text}
                 </div>

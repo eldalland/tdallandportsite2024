@@ -8,7 +8,7 @@ const NavbarEZ = ({text}) => {
   <div className={styles.nav}>
     <Link className={styles.link} to="/">
     <div className={styles.title}>
-      TENTSHAPE - <span style={{fontWeight:"normal",fontSize:"2rem", opacity:"100%"}}>{text}</span>
+      TENTSHAPE - <span className={styles.navspan}>{text}</span>
     </div>
     </Link>
   </div>

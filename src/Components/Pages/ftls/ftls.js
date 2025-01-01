@@ -332,7 +332,7 @@ const FTLS = () => {
         ))}
       </div>
       <div ref={scrollContainer} className={genstyles.flexcontainer}>
-        <div className={genstyles.flexitemleft}> </div>
+      
         <div className={genstyles.flexitemright}>
           {photos.map((url, index) => (
             <div key={index} className={genstyles.photocontainer}>

@@ -893,7 +893,7 @@ const Homepage = () => {
 
       <div className={styles.flexcontainer} ref={scrollContainer}>
         <div className={styles.contentbox}>
-          <div className={styles.flexitemleft}></div>
+       
           <div className={styles.flexitemright}>
             <div className={styles.project}>
               <div className={styles.titlebox}>
