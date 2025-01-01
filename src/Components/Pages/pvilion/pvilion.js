@@ -31,7 +31,7 @@ const Pvilion = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [inView, setInView] = useState([]);
   const photoRefs = useRef([]);
-
+  
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to top on page load
@@ -493,6 +493,7 @@ const Pvilion = () => {
             setInView((prev) => {
               const newInView = [...prev];
               newInView[index] = entry.isIntersecting;
+              console.log(newInView[index])
               return newInView;
             });
           }
@@ -521,7 +522,7 @@ const Pvilion = () => {
 
   return (
     <>
-      <NavbarEZ text="PVILION" />
+      <NavbarEZ text= "PVILION"/>
       <div className={isFullScreen ? genstyles.close : genstyles.hidden}>
         <img src={CloseIcon} style={{width:"40px",}} onClick={close} />
       </div>
@@ -556,7 +557,7 @@ const Pvilion = () => {
               />
               {/* Hover overlay with text */}
               <div className={genstyles.overlay}>
-                <div className={`${genstyles.overlay} ${inView[index] ? genstyles.solid : ''}`}></div>
+                <div className={genstyles.overlay}></div>
                 <div className={genstyles.overlaytext}>
                   {thumbnailList[index].text}
                 </div>

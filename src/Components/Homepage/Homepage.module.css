@@ -24,7 +24,7 @@
   .flexcontainer {
     height: fit-content;
     max-height: fit-content;
-
+    
   }
 }
 .contentbox {
@@ -154,8 +154,8 @@
 
 @media screen and (max-width: 600px) {
   .flexcontainer {
-    height: 86vh;
-    max-height: 86vh;
+    height: 92.5vh;
+    max-height: 92.5vh;
   }
   .titlebox {
     width: fit-content;
