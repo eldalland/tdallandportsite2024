@@ -145,7 +145,7 @@ overflow-y: hidden;
 }
 @media screen and (max-width: 600px) {
   .overlay {
-    opacity: 100%;
+    
     width: 100%;
     bottom:0;
     width: calc(100% - 1.1rem); 
@@ -165,7 +165,7 @@ overflow-y: hidden;
   position: relative;
 
 
-  border: 5px solid black;
+ 
 }
 @media screen and (max-width: 600px) {
   .influencercontainer {

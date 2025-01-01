@@ -32,6 +32,29 @@ const Pvilion = () => {
   const [inView, setInView] = useState([]);
   const photoRefs = useRef([]);
   
+  useEffect(() => {
+    const handleTouchStart = (event) => {
+      const target = event.target.closest(`.${genstyles.photocontainer}`);
+      if (target) {
+        target.classList.add(genstyles.hover);
+      }
+    };
+
+    const handleTouchEnd = (event) => {
+      const target = event.target.closest(`.${genstyles.photocontainer}`);
+      if (target) {
+        target.classList.remove(genstyles.hover);
+      }
+    };
+
+    document.addEventListener("touchstart", handleTouchStart);
+    document.addEventListener("touchend", handleTouchEnd);
+
+    return () => {
+      document.removeEventListener("touchstart", handleTouchStart);
+      document.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to top on page load
