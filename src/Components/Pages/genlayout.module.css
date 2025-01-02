@@ -169,7 +169,7 @@ overflow-y: hidden;
 }
 @media screen and (max-width: 600px) {
   .influencercontainer {
- 
+ width:auto;
   }
   
 }
@@ -319,8 +319,9 @@ width: min-content;
 }
 @media screen and (max-width: 600px) {
   .modalImg {
-    max-height:60vh;
+    max-height:100vh;
     min-width: 100vw;
+    max-width:300vw;
   }
   
 }

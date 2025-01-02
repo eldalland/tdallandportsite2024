@@ -6,8 +6,24 @@ import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { useCustomNavigate } from "./useCustomNavigate";
+import LoadingScreen from "../Pages/LoadingScreen/loadingscreen";
 
 const Homepage = () => {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time or wait for resources
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+
+  
+
   useEffect(() => {
     const ftld = document.getElementById("ftld");
     const handleResize = () => {
@@ -800,13 +816,24 @@ const Homepage = () => {
   }, []);
   const scrollContainer = useRef(null);
 
+  /*
   // Function to handle the horizontal scrolling
   const handleWheel = (e) => {
+    e.preventDefault();
+    
     if (scrollContainer.current) {
-      // Prevent vertical scrolling
-      e.preventDefault();
-      // Scroll horizontally instead (deltaY gives the amount of pixels to scroll)
-      scrollContainer.current.scrollLeft += e.deltaY;
+      const container = scrollContainer.current;
+      // Increase scroll speed with multiplier
+      const scrollSpeed = 10; // Adjust this value to change scroll speed
+      
+      // Add smooth scrolling behavior
+      container.style.scrollBehavior = 'smooth';
+      container.scrollLeft += e.deltaY * scrollSpeed;
+      
+      // Reset scroll behavior after animation
+      setTimeout(() => {
+        container.style.scrollBehavior = 'auto';
+      }, 200);
     }
   };
 
@@ -824,7 +851,7 @@ const Homepage = () => {
       }
     };
   }, []);
-
+*/
   const [currentIndex, setCurrentIndex] = useState(null);
 
   const setIndex = (url, link, List) => {
@@ -888,6 +915,7 @@ const Homepage = () => {
 
   return (
     <>
+    {isLoading && <LoadingScreen />}
     <div className={styles.box}>
       <Navbar />
 

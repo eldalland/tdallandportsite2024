@@ -193,8 +193,8 @@ const Ezbuilders = () => {
     "ezbuildersProjects/radialWave/",
     "ezbuildersProjects/tdThesis/",
     "ezbuildersProjects/uMass/",
-    "ezbuildersProjects/cornellAlumniMagazine/",
     "ezbuildersProjects/centuryTents/",
+    "ezbuildersProjects/cornellAlumniMagazine/",
     "ezbuildersProjects/influencers/",
     
   ];
