@@ -70,9 +70,9 @@ overflow-y: hidden;
   
 }
 .modalcontainer img:last-child {
-  margin-left:0.2rem;
+  margin-right:0;
 }
-.moalcontainer img:first-child {
+.modalcontainer img:first-child {
   margin-left:0;
 }
 .modalcontainer img:only-child{
@@ -81,20 +81,30 @@ overflow-y: hidden;
   justify-content: center;
 }
 
-
+.modalcontainer div:last-child {
+  margin-right:0;
+}
+.modalcontainer div:first-child {
+  margin-left:0;
+}
+.modalcontainer div:only-child{
+  margin: auto;
+  display: block;
+  justify-content: center;
+}
 
 .flexitemright {
   width: 94%;
   display: flex;
   flex-direction: row;
   height: 100%;
-  margin-left:11vh;
+  margin-left:9vh;
 }
 
 .photo {
   height: 100%;
   width: auto;
-  margin-left: 0.75em;
+  margin-left: 2vh;
   max-width: 100vw;
 }
 .photo:hover {
@@ -156,11 +166,11 @@ overflow-y: hidden;
   height:100vh;
   max-height:100vh;
   width:100vw;
-
+  margin-right: 1vh;
  
   display:flex;
   flex-direction:row;
-  justify-content: center;
+  
   align-items: center;
   position: relative;
 
@@ -172,12 +182,15 @@ overflow-y: hidden;
  width:auto;
   }
   
+ 
+  
+
 }
 .influenceroverlay{
   position: absolute; /* Position the overlay relative to the container */
   bottom: 0;
   left:0;
-  width: calc(100% - 0.4rem); /* Set the overlay width to match the container */
+  width: calc(100% ); /* Set the overlay width to match the container */
   height: 10%; /* Set the overlay height to match the container */
   opacity: 100%; /* Adjust overlay opacity as needed */
   /* Set overlay background color */
@@ -190,7 +203,8 @@ overflow-y: hidden;
 }
 @media screen and (max-width: 600px) {
   .influenceroverlay {
-    bottom:20%;
+    bottom:0;
+    width: calc(100% - 0.5rem)
   }
   
 }
@@ -300,7 +314,7 @@ overflow-y: hidden;
 
 
   height: 100%; /* Full height */
-width: min-content;
+  width: min-content;
   background-color: rgb(255, 255, 255); /* Fallback color */
   background-color: rgba(255, 255, 255, 0.9); /* Black w/ opacity */
   display: flex;
@@ -315,7 +329,7 @@ width: min-content;
   z-index: 2;
   animation: 2s zoom;
   max-width:100vw;
-  margin-right: 0.4rem;
+  margin-right: 1vh;
 }
 @media screen and (max-width: 600px) {
   .modalImg {

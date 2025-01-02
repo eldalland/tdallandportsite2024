@@ -39,6 +39,13 @@
     text-wrap: wrap; 
     text-wrap: wrap;
 }
+@media screen and (max-width: 600px) {
+    .invisinput {
+        font-size: 1.5rem;
+        max-width: 89vw;
+    }
+    
+}
 .cursor {
     position: absolute;
     margin-top:0.15%;

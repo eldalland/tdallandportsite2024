@@ -36,8 +36,8 @@ const FTLD = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 600 || window.innerHeight <= 500) {
-        setNavbarText("FTL D&E STUDIO");
+      if (window.innerWidth <= 760 || window.innerHeight <= 500) {
+        setNavbarText("FTL DES ENG STUDIO");
       } else {
         setNavbarText("FTL DESIGN ENGINEERING STUDIO");
       }

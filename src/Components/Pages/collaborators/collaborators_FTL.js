@@ -100,7 +100,7 @@ const CollaboratorsFTL = () => {
             <ul className={styles.ul3}>
                 {nameArr.map((name, index) => <li key={index}>{name}</li>)}
                 </ul>
-            <div className={styles.footer}><span onClick={() => navigate("/contact")}>Contact Site Administrator</span> for additional names and corrections</div>
+            <div className={styles.footer}>Contact <span onClick={() => navigate("/contact")}>Site Administrator</span> for additional names and corrections</div>
             </div>
         </div>
         </>
