@@ -4,6 +4,8 @@ import Layout from './Components/Pages/Layout';
 import Hpage from './Components/Pages/Hpage/Hpage';
 import Ezbuilders from './Components/Pages/Ezbuilders/Ezbuilders'
 import { HashRouter, Link, Route, Routes } from "react-router-dom";
+import { useEffect } from 'react';
+import { setVh } from './utils/setVh';
 import Homepage from './Components/Homepage/Homepage';
 import FTL from './Components/Pages/ftl/ftl';
 import FTLD from './Components/Pages/ftld/ftld';
@@ -15,7 +17,15 @@ import CollaboratorsFTL from './Components/Pages/collaborators/collaborators_FTL
 import CollaboratorsSOLAR from './Components/Pages/collaborators/collaborators_SOLAR';
 import CollaboratorsPVILION from './Components/Pages/collaborators/collaborators_PVILION';
 import Contact from './Components/Pages/Contact/Contact';
-function App() {
+const App=() => {
+  useEffect(() => {
+    setVh();
+    window.addEventListener('resize', setVh);
+
+    return () => {
+      window.removeEventListener('resize', setVh);
+    };
+  }, []);
   return (
 <>
 

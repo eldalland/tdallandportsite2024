@@ -1,12 +1,19 @@
 .container{
-    height:82vh;
-    max-height:82vh;
+    height:85.8vh;
+    max-height:85.8vh;
     width:100%;
     display:flex;
     justify-content: center;
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
+}
+@media screen and (max-width: 600px) {
+    .container {
+        height: calc(var(--vh, 1vh) * 92.5);
+        max-height: calc(var(--vh, 1vh) * 92.5);
+    }
+    
 }
 .formcontainer{
     height:fit-content;

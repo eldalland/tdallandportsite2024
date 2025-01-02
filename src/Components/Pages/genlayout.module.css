@@ -32,8 +32,8 @@ overflow-y: hidden;
 }
 @media screen and (max-width:600px){
   .flexcontainer{
-      height: 92.5vh;
-      max-height: 92.5vh;
+      height: calc(var(--vh, 1vh) * 92.5);
+      max-height: calc(var(--vh, 1vh) * 92.5);
       justify-content: center;
       align-items: center;
      
@@ -118,7 +118,7 @@ overflow-y: hidden;
 }
 @media screen and (max-width: 600px) {
   .photocontainer {
-   height:85vh;
+   height:calc(var(--vh, 1vh) * 85);
   }
   
 }
@@ -319,7 +319,7 @@ width: min-content;
 }
 @media screen and (max-width: 600px) {
   .modalImg {
-    max-height:100vh;
+    max-height:calc(var(--vh, 1vh) * 100);
     min-width: 100vw;
     max-width:300vw;
   }

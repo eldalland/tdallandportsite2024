@@ -19,7 +19,7 @@
 
 @media screen and (max-width:600px){
     .nav{
-        height: 7.5vh;
+        height: calc(var(--vh, 1vh) * 7.5);
     }
     
 }
