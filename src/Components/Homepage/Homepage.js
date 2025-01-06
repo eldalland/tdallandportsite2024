@@ -3,7 +3,7 @@ import styles from "../Homepage/Homepage.module.css";
 import { useState, useEffect, useRef } from "react";
 import { storage } from "../Firebase/Firebase";
 import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Link, Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { useCustomNavigate } from "./useCustomNavigate";
 import LoadingScreen from "../Pages/LoadingScreen/loadingscreen";
@@ -11,6 +11,28 @@ import LoadingScreen from "../Pages/LoadingScreen/loadingscreen";
 const Homepage = () => {
 
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
+  useEffect(() => {
+    const logo = document.getElementById("navbar-logo");
+    console.log(logo)
+    const handleLogoClick = () => {
+      
+      if (scrollContainer.current) {
+        scrollContainer.current.scrollTo({ left: 0, behavior: 'smooth' });
+      }
+      
+    };
+
+    if (logo) {
+      logo.addEventListener("click", handleLogoClick);
+    }
+
+    return () => {
+      if (logo) {
+        logo.removeEventListener("click", handleLogoClick);
+      }
+    };
+  }, [location]);
 
   useEffect(() => {
     const hasVisited = localStorage.getItem("hasVisited");
