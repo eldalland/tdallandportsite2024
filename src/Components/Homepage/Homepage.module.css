@@ -66,7 +66,7 @@
 }
 @media screen and (max-width: 600px) {
   .flexitemright {
-    margin-left: 8.5vh;
+    margin-left: 4vh;
   }
   
 }
@@ -87,15 +87,22 @@
   }
 }
 .titlebox {
-  max-height: 100%;
+  height:100%;
   width: 100%;
+  max-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-right: 0.5em;
 
 }
-
+@media screen and (max-height: 500px) {
+  .titlebox {
+padding-top:0;
+margin:0;
+  }
+  
+}
 .names {
   font-size: 0.8rem;
   font-weight: bold;
@@ -196,6 +203,7 @@
     display: inline-block;
     white-space: nowrap;
   }
+
   .company {
     font-size: 1.5rem;
     white-space: nowrap; /* Prevent text from wrapping */

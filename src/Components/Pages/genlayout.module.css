@@ -100,7 +100,12 @@ overflow-y: hidden;
   height: 100%;
   margin-left:9vh;
 }
-
+@media screen and (max-width: 600px) {
+  .flexitemright {
+    margin-left: 1.5vh;
+  }
+  
+}
 .photo {
   height: 100%;
   width: auto;
@@ -190,7 +195,7 @@ overflow-y: hidden;
   position: absolute; /* Position the overlay relative to the container */
   bottom: 0;
   left:0;
-  width: calc(100% ); /* Set the overlay width to match the container */
+  width: calc(100% - 0.5rem); /* Set the overlay width to match the container */
   height: 10%; /* Set the overlay height to match the container */
   opacity: 100%; /* Adjust overlay opacity as needed */
   /* Set overlay background color */
@@ -328,14 +333,17 @@ overflow-y: hidden;
   height: 100%;
   z-index: 2;
   animation: 2s zoom;
-  max-width:100vw;
+
   margin-right: 1vh;
 }
 @media screen and (max-width: 600px) {
   .modalImg {
+    height: 100%;
+    object-fit:cover;
     max-height:calc(var(--vh, 1vh) * 100);
-    min-width: 100vw;
-    max-width:300vw;
+    max-width:auto;
+    width:auto;
+    
   }
   
 }

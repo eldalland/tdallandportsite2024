@@ -31,7 +31,26 @@ const Pvilion = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const [inView, setInView] = useState([]);
   const photoRefs = useRef([]);
-  
+     const [isScrolling, setIsScrolling] = useState(false);
+    
+    
+      useEffect(() => {
+        const handleScroll = () => {
+          setIsScrolling(true);
+          clearTimeout(scrollContainer.current.scrollTimeout);
+          scrollContainer.current.scrollTimeout = setTimeout(() => {
+            setIsScrolling(false);
+          }, 1000); // Hide scrollbar after 1 second of inactivity
+        };
+    
+        const container = scrollContainer.current;
+        container.addEventListener("scroll", handleScroll);
+    
+        return () => {
+          container.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
+
   useEffect(() => {
     const handleTouchStart = (event) => {
       const target = event.target.closest(`.${genstyles.photocontainer}`);
@@ -564,7 +583,7 @@ const Pvilion = () => {
          
         ))}
       </div>
-      <div ref={scrollContainer} className={genstyles.flexcontainer}>
+      <div ref={scrollContainer} className={`${genstyles.flexcontainer} ${isScrolling ? genstyles.scrolling : ''}`}>
       
         <div className={genstyles.flexitemright}>
           {photos.map((url, index) => (

@@ -13,14 +13,20 @@ const Homepage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time or wait for resources
-    const timer = setTimeout(() => {
+    const hasVisited = localStorage.getItem("hasVisited");
+
+    if (!hasVisited) {
+      // Simulate loading time or wait for resources
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+        localStorage.setItem("hasVisited", "true");
+      }, 2000); // Adjust the delay as needed
+
+      return () => clearTimeout(timer);
+    } else {
       setIsLoading(false);
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    }
   }, []);
-
 
   
 
@@ -35,9 +41,9 @@ const Homepage = () => {
         '2006 - Robert Lerner, Tony Saxton, Todd Dalland',
         '2011 - Robert Lerner, Colin Touhey, Todd Dalland'];
       const shortenedContent = ['1971 - Denis Hector, \n Nic Goldsmith, Todd Dalland',
-        '1977 - Ross Dalland, Ray Gill, Nic Goldsmith, Denis Hector, Todd Dalland',
+        '1977 - Ross Dalland, Ray Gill,\n Nic Goldsmith, Denis Hector, Todd Dalland',
         '1982 - Nic Goldsmith, Todd Dalland',
-        '1992 - Nic Goldsmith, \rTed Happold, Ian Liddell, Eddie Pugh,Todd Dalland',
+        '1992 - Nic Goldsmith, Ted Happold,\n Ian Liddell, Eddie Pugh,Todd Dalland',
         '2006 - Robert Lerner, \nTony Saxton, Todd Dalland',
         '2011 - Robert Lerner, \nColin Touhey, Todd Dalland'
         ];
@@ -570,7 +576,7 @@ const Homepage = () => {
       text: "POWERMOD - FOLD-UP SOLAR CHARGER",
     },
     { photolink: "ftlsThumbnails/1.0 POWERMOD - CAR PARK SOLAR CHARGING STATION MODULES.webp", text: "POWERMOD - CAR PARK SOLAR CHARGING STATION MODULES" },
-   
+    { photolink: "ftlsThumbnails/10-tilting-solar-charging-station-module-concept-6769d05ed3ba9.webp", text: "TILTNG SOLAR CHARGING STATION MODULE CONCEPT" },
     { photolink: "ftlsThumbnails/10-powersquad-us-army-6769d09d781c0.webp", text: "POWERSQUAD - US ARMY" },
     {
       photolink: "ftlsThumbnails/10-powermod-charging-stations-pole-support-wind-test-graphic-6769d0c37cca8.webp",
@@ -877,6 +883,21 @@ const Homepage = () => {
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+  useEffect(() => {
+    const handleWheel = (event) => {
+      if (event.deltaY !== 0) {
+        event.preventDefault();
+        scrollContainer.current.scrollLeft += event.deltaY;
+      }
+    };
+
+    const container = scrollContainer.current;
+    container.addEventListener("wheel", handleWheel);
+
+    return () => {
+      container.removeEventListener("wheel", handleWheel);
     };
   }, []);
   /* useEffect(() => {

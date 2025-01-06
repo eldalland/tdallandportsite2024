@@ -29,7 +29,25 @@ const FTLS = () => {
   const location = useLocation();
   const { scrollUrl } = location.state || {};
   const [slideIndex, setSlideIndex] = useState(0);
-
+     const [isScrolling, setIsScrolling] = useState(false);
+    
+    
+      useEffect(() => {
+        const handleScroll = () => {
+          setIsScrolling(true);
+          clearTimeout(scrollContainer.current.scrollTimeout);
+          scrollContainer.current.scrollTimeout = setTimeout(() => {
+            setIsScrolling(false);
+          }, 1000); // Hide scrollbar after 1 second of inactivity
+        };
+    
+        const container = scrollContainer.current;
+        container.addEventListener("scroll", handleScroll);
+    
+        return () => {
+          container.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
   const slide = () => {
     slideIndex < numPhotos - 1
       ? scrollModal.current.scrollBy({
@@ -169,7 +187,7 @@ const FTLS = () => {
       text: "POWERMOD - FOLD-UP SOLAR CHARGER",
     },
     { photolink: "ftlsThumbnails/1.0 POWERMOD - CAR PARK SOLAR CHARGING STATION MODULES.webp", text: "POWERMOD - CAR PARK SOLAR CHARGING STATION MODULES" },
-   
+   { photolink: "ftlsThumbnails/10-tilting-solar-charging-station-module-concept-6769d05ed3ba9.webp", text: "TILTNG SOLAR CHARGING STATION MODULE CONCEPT" },
     { photolink: "ftlsThumbnails/10-powersquad-us-army-6769d09d781c0.webp", text: "POWERSQUAD - US ARMY" },
     {
       photolink: "ftlsThumbnails/10-powermod-charging-stations-pole-support-wind-test-graphic-6769d0c37cca8.webp",
@@ -185,19 +203,18 @@ const FTLS = () => {
   ];
 
   const LinkList = [
-    "ftlsProjects/aztecTents/",
+"ftlsProjects/aztecTents/",
 "ftlsProjects/classicTents/",
 "ftlsProjects/mahaffeyTent/",
 "ftlsProjects/dallasCowboys/",
 "ftlsProjects/ftlSolar/",
 "ftlsProjects/jocotasUSArmy/",
 "ftlsProjects/foldUpSolarCharger/",
-"ftlsProjects/jocotasChargingSailUSArmy/",
 "ftlsProjects/carParkSolarChargingStation/",
 "ftlsProjects/tiltingSolarChargingStation/",
 "ftlsProjects/powersquadUSArmy/",
 "ftlsProjects/powermodChargingStationsConcepts/",
-"ftlsProjects/sperryRentalTents/",
+"ftlsProjects/sperryRentalTentSystems/",
 "ftlsProjects/powermodChargingStationsWaterfront/",
   ];
 
@@ -331,7 +348,7 @@ const FTLS = () => {
          
         ))}
       </div>
-      <div ref={scrollContainer} className={genstyles.flexcontainer}>
+      <div ref={scrollContainer} className={`${genstyles.flexcontainer} ${isScrolling ? genstyles.scrolling : ''}`}>
       
         <div className={genstyles.flexitemright}>
           {photos.map((url, index) => (
