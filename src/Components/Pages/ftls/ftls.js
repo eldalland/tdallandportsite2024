@@ -198,7 +198,7 @@ const FTLS = () => {
       text: "CERTIFICATION FOR SPERRY RENTAL TENT SYSTEMS - SPERRY TENTS",
     },
     { photolink: "ftlsThumbnails/10-powermod-charging-stations-pole-support-waterfront-6769d10ecbd1d.webp", text: "POWERMOD - CHARGING STATIONS - POLE SUPPORT - WATERFRONT" },
-   
+    { photolink: "ftlsThumbnails/1-zimmerli-677d59f5da140.webp", text: "ZIMMERLI AMPHITHEATER - NASHVILLE, TN" },
     
   ];
 
@@ -216,6 +216,7 @@ const FTLS = () => {
 "ftlsProjects/powermodChargingStationsConcepts/",
 "ftlsProjects/sperryRentalTentSystems/",
 "ftlsProjects/powermodChargingStationsWaterfront/",
+"ftlsProjects/zimmerliAmphitheater/",
   ];
 
   const [currentFolder, setCurrentFolder] = useState(LinkList[0]);
