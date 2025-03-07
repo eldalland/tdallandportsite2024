@@ -33,7 +33,7 @@ const Contact = () => {
       <div className={styles.container}>
         <div className={styles.formcontainer}>
           <form
-            action="https://formsubmit.co/tentshape@gmail.com"
+            action="https://formsubmit.co/tdalland@gmail.com"
             method="POST"
           >
             <textarea
